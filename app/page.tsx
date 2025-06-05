@@ -157,7 +157,7 @@ export default function Home() {
       <SectionContainer id="simulator" background="white">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="font-koulen text-5xl md:text-6xl lg:text-7xl mb-6">
-            <span className="text-resotravo-blue">Simulez vos </span>
+            <span className="text-resotravo-blue">Simuler vos </span>
             <span className="text-resotravo-orange">futurs revenus</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600">
@@ -173,7 +173,7 @@ export default function Home() {
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="font-koulen text-5xl md:text-6xl lg:text-7xl mb-6">
               <span className="text-white">Comment </span>
-              <span className="text-resotravo-orange">Ça marche ?</span>
+              <span className="text-resotravo-orange">ça marche ?</span>
             </h2>
           </div>
           <HowItWorks />
