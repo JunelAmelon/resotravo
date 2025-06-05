@@ -80,13 +80,20 @@ export default function Home() {
                 <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden relative">
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
                   <Image 
-                    src="https://images.pexels.com/photos/3760263/pexels-photo-3760263.jpeg" 
+                    src="/herosectionimg.png" 
                     alt="Personne travaillant sur un projet" 
                     className="object-cover"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     priority
                   />
+                   <Image 
+              src="/logo couleur texteblanc.svg" 
+              alt="RESOTRAVO Logo" 
+              width={150}
+              height={40}
+              className="h-8 sm:h-10 w-auto"
+            />
                 </div>
               </div>
             </div>
