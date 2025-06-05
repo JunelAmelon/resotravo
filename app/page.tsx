@@ -71,25 +71,21 @@ export default function Home() {
             </div>
             
             {/* Right Column - Image */}
-            <div className="relative">
-              <div className="relative">
-                {/* Dotted border container */}
-                <div className="absolute -inset-6 rounded-[3rem] border-2 border-dashed border-resotravo-orange/30"></div>
-                
-                {/* Image container with gradient border */}
-                <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden relative w-full h-full">
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
-                  <Image 
-                    src="/herosectionimg.png" 
-                    alt="Personne travaillant sur un projet" 
-                    className="object-cover w-full h-full"
-                    fill
-                    sizes="(max-width: 778px) 120vw, 50vw"
-                    priority
-                  />
-             
-                </div>
-              </div>
+            <div className="relative aspect-[4/5] w-full max-w-[700px] h-[420px] md:h-[700px] mx-auto">
+              {/* Image covering the whole dotted border area */}
+              <Image
+                src="/herosectionimg.png"
+                alt="Personne travaillant sur un projet"
+                className="object-cover absolute inset-0 w-full h-full rounded-[3rem]"
+                fill
+                sizes="(max-width: 778px) 120vw, 50vw"
+                priority
+                style={{ zIndex: 0 }}
+              />
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-b from-transparent to-black/20 pointer-events-none" style={{ zIndex: 1 }}></div>
+              {/* Dotted border overlay */}
+              <div className="absolute inset-0 rounded-[3rem] border-2 border-dashed border-resotravo-orange/30 pointer-events-none" style={{ zIndex: 2 }}></div>
             </div>
           </div>
         </div>
