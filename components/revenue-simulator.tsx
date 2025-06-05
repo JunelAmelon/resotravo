@@ -28,8 +28,8 @@ export function RevenueSimulator() {
     return () => clearTimeout(timer);
   }, [hoursPerWeek, projectsPerMonth]);
   
-  // Calculate efficiency score based on hours and projects
-  const efficiencyScore = Math.min(100, Math.round((projectsPerMonth / hoursPerWeek) * 50));
+  // Calculate efficiency score based on hours (more hours = higher score)
+  const efficiencyScore = Math.min(100, Math.round((hoursPerWeek / 40) * 100));
   
   return (
     <div className="max-w-4xl mx-auto">
@@ -139,12 +139,12 @@ export function RevenueSimulator() {
 
               <div className="relative h-2 bg-gray-200 rounded-full overflow-hidden">
                 <div 
-                  className={`absolute top-0 left-0 h-full rounded-full ${efficiencyScore > 70 ? "bg-green-600" : efficiencyScore > 40 ? "bg-resotravo-blue" : "bg-resotravo-orange"}`} style={{width: `${efficiencyScore}%`}}
+                  className="absolute top-0 left-0 h-full rounded-full bg-resotravo-blue" style={{width: `${efficiencyScore}%`}}
                 ></div>
               </div>
               <div className="flex justify-between mt-2">
-                <span className="text-xs text-gray-400">Faible</span>
-                <span className="text-xs text-gray-400">Excellent</span>
+                <span className="text-xs text-gray-400">Moins d'heures</span>
+                <span className="text-xs text-gray-400">Plus d'heures</span>
               </div>
             </div>
           </div>

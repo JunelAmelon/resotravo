@@ -7,19 +7,19 @@ export function HowItWorks() {
   const steps = [
     {
       icon: <BookOpen className="w-8 h-8" />,
-      title: "Formation complete",
+      title: "Formation Complète",
       description: "Accédez à notre programme de formation exclusif et devenez un expert du courtage en travaux.",
       color: "bg-resotravo-blue"
     },
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Accompagnement",
+      title: "Accompagnement Personnalisé",
       description: "Bénéficiez d'un suivi personnalisé et d'un accès à notre communauté d'experts.",
       color: "bg-resotravo-orange"
     },
     {
       icon: <Target className="w-8 h-8" />,
-      title: "Premiers resultats",
+      title: "Premiers Résultats",
       description: "Commencez à générer vos premiers revenus grâce à notre méthode éprouvée.",
       color: "bg-resotravo-blue"
     }
