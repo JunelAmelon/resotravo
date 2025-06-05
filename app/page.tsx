@@ -84,16 +84,10 @@ export default function Home() {
                     alt="Personne travaillant sur un projet" 
                     className="object-cover"
                     fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
+                    sizes="(max-width: 768px) 120vw, 50vw"
                     priority
                   />
-                   <Image 
-              src="/logo couleur texteblanc.svg" 
-              alt="RESOTRAVO Logo" 
-              width={150}
-              height={40}
-              className="h-8 sm:h-10 w-auto"
-            />
+             
                 </div>
               </div>
             </div>
