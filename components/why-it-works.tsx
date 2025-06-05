@@ -31,7 +31,7 @@ export function WhyItWorks() {
   const features = [
     {
       icon: <Briefcase className="w-6 h-6" />,
-      title: "Aucun droit d'entrée",
+      title: "Aucun droit d'entree",
       description: "Démarrez sans investissement initial"
     },
     {
@@ -41,7 +41,7 @@ export function WhyItWorks() {
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "RC Pro négociée",
+      title: "RC Pro negociee",
       description: "Protection professionnelle optimale"
     },
     {
@@ -51,7 +51,7 @@ export function WhyItWorks() {
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "Coaching personnalisé",
+      title: "Coaching personnalise",
       description: "Accompagnement sur mesure"
     },
     {
@@ -71,9 +71,9 @@ export function WhyItWorks() {
           RESOTRAVO est né de l'expérience d'AXIMOTRAVO, un réseau solide lancé en 2015.
           <br />
           <span className="font-koulen text-2xl block mt-4">
-            Nous avons mixé la puissance du digital, la proximité humaine,
+            Nous avons mixe la puissance du digital, la proximite humaine,
             <br />
-            et un accompagnement réel.
+            et un accompagnement reel.
           </span>
         </p>
       </div>
