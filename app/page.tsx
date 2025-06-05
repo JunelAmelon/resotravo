@@ -91,7 +91,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="font-koulen text-5xl md:text-6xl lg:text-7xl mb-6">
             <span className="block text-resotravo-blue">Un moyen simple</span>
-            <span className="block text-resotravo-orange">et moderne de <span className="font-roboto">Réussir</span></span>
+            <span className="block text-resotravo-orange">et moderne de REUSSIR</span>
           </h2>
           
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -152,8 +152,8 @@ export default function Home() {
       <SectionContainer id="simulator" background="white">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="font-koulen text-5xl md:text-6xl lg:text-7xl mb-6">
-            <span className="text-resotravo-blue"><span className="font-roboto">Simulez</span> vos </span>
-            <span className="text-resotravo-orange">futurs <span className="font-roboto">Revenus</span></span>
+            <span className="text-resotravo-blue">SIMULEZ vos </span>
+            <span className="text-resotravo-orange">futurs REVENUS</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600">
             Découvrez votre potentiel de gains selon votre disponibilité
@@ -168,7 +168,7 @@ export default function Home() {
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="font-koulen text-5xl md:text-6xl lg:text-7xl mb-6">
               <span className="text-white">Comment </span>
-              <span className="text-resotravo-orange font-bold"><span className="font-roboto">Ça</span> marche ?</span>
+              <span className="text-resotravo-orange font-bold">CA marche ?</span>
             </h2>
           </div>
           <HowItWorks />
@@ -179,7 +179,7 @@ export default function Home() {
       <SectionContainer id="why-works" background="white">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="font-koulen text-5xl md:text-6xl lg:text-7xl mb-6">
-            <span className="text-resotravo-blue">Un <span className="font-roboto">Modèle</span> </span>
+            <span className="text-resotravo-blue">Un MODELE </span>
             <span className="text-resotravo-orange">qui fait ses preuves</span>
           </h2>
         </div>
@@ -191,7 +191,7 @@ export default function Home() {
         <div className="relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-koulen text-5xl md:text-6xl lg:text-7xl mb-6">
-              <span className="text-white">Ils sont <span className="font-roboto">Déjà</span> </span>
+              <span className="text-white">Ils sont DEJA </span>
               <span className="text-resotravo-orange">en formation</span>
             </h2>
             
@@ -230,7 +230,7 @@ export default function Home() {
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="font-koulen text-5xl md:text-6xl lg:text-7xl mb-6">
             <span className="text-resotravo-blue">Questions </span>
-            <span className="text-resotravo-orange"><span className="font-roboto">Fréquentes</span></span>
+            <span className="text-resotravo-orange">FREQUENTES</span>
           </h2>
         </div>
         <FAQAccordion />
