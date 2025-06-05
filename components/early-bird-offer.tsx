@@ -73,7 +73,7 @@ export function EarlyBirdOffer() {
         transition={{ duration: 0.8, ease: "easeInOut" }}
       >
         {/* En-tete special - Badge anime */}
-        <div className="bg-gradient-to-r from-resotravo-orange to-resotravo-blue p-4 text-center">
+        <div className="bg-resotravo-blue p-4 text-center">
           <motion.div 
             className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full"
             animate={pulsing ? { scale: [1, 1.05, 1] } : {}}
@@ -200,7 +200,7 @@ export function EarlyBirdOffer() {
         </div>
         
         {/* Banniere finale */}
-        <div className="p-6 bg-gradient-to-r from-resotravo-orange to-resotravo-blue text-center">
+        <div className="p-6 bg-resotravo-blue text-center">
           <motion.p 
             className="font-koulen text-lg text-white"
             animate={pulsing ? { scale: [1, 1.05, 1] } : {}}
