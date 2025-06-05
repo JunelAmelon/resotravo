@@ -107,7 +107,7 @@ export default function Home() {
             </div>
             <h3 className="font-koulen text-2xl mb-4 text-resotravo-blue">On Vous Forme</h3>
             <p className="text-gray-600">
-              Accédez à une <span className="font-semibold">formation complète</span> et des ressources professionnelles pour réussir.
+              Accedez a une <span className="font-semibold">formation complete</span> et des ressources professionnelles pour reussir.
             </p>
           </div>
           
@@ -115,9 +115,9 @@ export default function Home() {
             <div className="w-16 h-16 bg-resotravo-orange rounded-xl flex items-center justify-center mb-6 text-white transform -rotate-6">
               <Laptop className="w-8 h-8" />
             </div>
-            <h3 className="font-koulen text-2xl mb-4 text-resotravo-orange">On Vous Équipe</h3>
+            <h3 className="font-koulen text-2xl mb-4 text-resotravo-orange">On Vous EQUIPE</h3>
             <p className="text-gray-600">
-              Tous les <span className="font-semibold">outils nécessaires</span> pour réussir dans le courtage en travaux.
+              Tous les <span className="font-semibold">outils necessaires</span> pour reussir dans le courtage en travaux.
             </p>
           </div>
           
@@ -129,7 +129,7 @@ export default function Home() {
               On Vous Guide
             </h3>
             <p className="text-gray-600">
-              Un <span className="font-semibold">accompagnement personnalisé</span> à chaque étape de votre parcours.
+              Un <span className="font-semibold">accompagnement personnalise</span> a chaque etape de votre parcours.
             </p>
           </div>
         </div>
@@ -156,13 +156,13 @@ export default function Home() {
             <span className="text-resotravo-orange">futurs REVENUS</span>
           </h2>
           <p className="text-lg sm:text-xl text-gray-600">
-            Découvrez votre potentiel de gains selon votre disponibilité
+            Decouvrez votre potentiel de gains selon votre disponibilite
           </p>
         </div>
         <RevenueSimulator />
       </SectionContainer>
       
-      {/* SECTION 5 - COMMENT ÇA MARCHE */}
+      {/* SECTION 5 - COMMENT CA MARCHE */}
       <SectionContainer id="how" background="dark" className="how-section">
         <div className="relative z-10">
           <div className="text-center mb-12 sm:mb-16">
@@ -175,7 +175,7 @@ export default function Home() {
         </div>
       </SectionContainer>
       
-      {/* SECTION 6 - POURQUOI ÇA FONCTIONNE */}
+      {/* SECTION 6 - POURQUOI CA FONCTIONNE */}
       <SectionContainer id="why-works" background="white">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="font-koulen text-5xl md:text-6xl lg:text-7xl mb-6">

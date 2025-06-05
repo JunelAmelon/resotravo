@@ -14,12 +14,12 @@ export function RevenueSimulator() {
   const [projectsPerMonth, setProjectsPerMonth] = useState(2);
   const [animateValue, setAnimateValue] = useState(false);
   
-  // Calcul des revenus estimés
+  // Calcul des revenus estimes
   const estimatedMonthlyRevenue = projectsPerMonth * avgCommission;
   const estimatedYearlyRevenue = estimatedMonthlyRevenue * 12;
   
-  // Calcul du taux horaire (revenus mensuels divisés par nombre d'heures)
-  const hourlyRate = Math.round(estimatedMonthlyRevenue / (hoursPerWeek * 4)); // Considérant 4 semaines par mois
+  // Calcul du taux horaire (revenus mensuels divises par nombre d'heures)
+  const hourlyRate = Math.round(estimatedMonthlyRevenue / (hoursPerWeek * 4)); // Considerant 4 semaines par mois
   
   // Trigger animation when values change
   useEffect(() => {
@@ -35,11 +35,11 @@ export function RevenueSimulator() {
     <div className="max-w-4xl mx-auto">
       <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
         <div className="grid grid-cols-1 md:grid-cols-2">
-          {/* Colonne des contrôles */}
+          {/* Colonne des controles */}
           <div className="order-2 md:order-1 p-8 space-y-6">
-            <h3 className="font-koulen text-2xl text-resotravo-blue mb-6">Simulateur de revenus</h3>
+            <h3 className="font-koulen text-2xl text-resotravo-blue mb-6">SIMULATEUR DE REVENUS</h3>
             
-            {/* Disponibilité (heures) */}
+            {/* Disponibilite (heures) */}
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-100">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
@@ -48,7 +48,7 @@ export function RevenueSimulator() {
                   </div>
                   <div>
                     <label htmlFor="hours" className="block font-medium text-gray-800">
-                      Disponibilité
+                      DISPONIBILITE
                     </label>
                     <span className="text-sm text-gray-500">
                       Heures par semaine
@@ -130,7 +130,7 @@ export function RevenueSimulator() {
                   <div className="w-10 h-10 rounded-lg bg-resotravo-blue flex items-center justify-center">
                     <Award className="w-5 h-5 text-white" />
                   </div>
-                  <h4 className="font-medium text-gray-800">Score d'efficacité</h4>
+                  <h4 className="font-medium text-gray-800">Score d&apos;EFFICACITE</h4>
                 </div>
                 <div className="bg-white py-1.5 px-4 rounded-lg border border-gray-200 shadow-sm">
                   <span className="font-koulen text-lg text-resotravo-blue">{efficiencyScore}%</span>
@@ -143,8 +143,8 @@ export function RevenueSimulator() {
                 ></div>
               </div>
               <div className="flex justify-between mt-2">
-                <span className="text-xs text-gray-400">Moins d'heures</span>
-                <span className="text-xs text-gray-400">Plus d'heures</span>
+                <span className="text-xs text-gray-400">Moins d&apos;heures</span>
+                <span className="text-xs text-gray-400">Plus d&apos;heures</span>
               </div>
             </div>
           </div>
@@ -152,7 +152,7 @@ export function RevenueSimulator() {
           {/* Colonne des résultats */}
           <div className="order-1 md:order-2 bg-resotravo-blue p-8 text-white">
             <div className="h-full flex flex-col">
-              <h3 className="font-koulen text-2xl mb-8">Vos revenus potentiels</h3>
+              <h3 className="font-koulen text-2xl mb-8">VOS REVENUS POTENTIELS</h3>
               
               <div className="space-y-6 flex-1">
                 {/* Revenu mensuel */}
@@ -161,7 +161,7 @@ export function RevenueSimulator() {
                     <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
                       <BarChart3 className="w-4 h-4" />
                     </div>
-                    <p className="text-white/80 font-medium">Revenu mensuel</p>
+                    <p className="text-white/80 font-medium">REVENU MENSUEL</p>
                   </div>
                   
                   <motion.div
@@ -187,7 +187,7 @@ export function RevenueSimulator() {
                     <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
                       <TrendingUp className="w-4 h-4" />
                     </div>
-                    <p className="text-white/80 font-medium">Projection annuelle</p>
+                    <p className="text-white/80 font-medium">PROJECTION ANNUELLE</p>
                   </div>
                   
                   <div className="font-koulen text-3xl text-white">
@@ -200,7 +200,7 @@ export function RevenueSimulator() {
               <div className="mt-6">
                 <div className="bg-white/15 rounded-lg p-4 text-center">
                   <p className="text-sm">
-                    Basé sur une commission moyenne de {avgCommission.toLocaleString("fr-FR")}€ par projet
+                    Base sur une commission moyenne de {avgCommission.toLocaleString("fr-FR")}€ par projet
                   </p>
                 </div>
               </div>
