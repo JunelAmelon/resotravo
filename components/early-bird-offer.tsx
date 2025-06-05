@@ -43,7 +43,7 @@ export function EarlyBirdOffer() {
             <div className="inline-flex items-center gap-2 sm:gap-3 bg-white/20 backdrop-blur-sm px-4 sm:px-6 py-2 rounded-full mb-4 sm:mb-6">
               <Timer className="w-5 h-5 text-white" />
               <span className="font-koulen text-base text-white">
-                Offre limitée aux 50 premiers inscrits
+                Offre LIMITÉE aux 50 premiers inscrits
               </span>
             </div>
             
