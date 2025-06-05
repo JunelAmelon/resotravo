@@ -7,9 +7,13 @@ import { Badge } from "@/components/ui/badge";
 import { Gift, Rocket, Globe, Timer, ArrowRight, AlertCircle, CheckCircle, XCircle } from "lucide-react";
 import { CountdownTimer } from "@/components/countdown-timer";
 import { motion, AnimatePresence } from "framer-motion";
+import { WaitlistForm } from "@/components/waitlist-form";
+import { PaymentModal } from "@/components/payment-modal";
 
 export function EarlyBirdOffer() {
   const [pulsing, setPulsing] = useState(false);
+  const [showWaitlistForm, setShowWaitlistForm] = useState(false);
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
   
   // Animation de battement de coeur automatique
   useEffect(() => {
@@ -110,16 +114,13 @@ export function EarlyBirdOffer() {
                   </p>
                 </motion.div>
                 
-                <CTAButton 
-                  href="#signup" 
-                  variant="primary" 
-                  className="bg-white text-resotravo-blue hover:bg-white/90 text-base sm:text-lg font-bold py-3 px-6 rounded-xl shadow-xl w-full group"
+                <button 
+                  onClick={() => setShowPaymentModal(true)}
+                  className="bg-white text-resotravo-blue hover:bg-white/90 text-base sm:text-lg font-bold py-3 px-6 rounded-xl shadow-xl w-full group flex items-center justify-center gap-2 transition-all duration-300"
                 >
-                  <span className="flex items-center justify-center gap-2">
-                    Je reserve ma place
-                    <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-                  </span>
-                </CTAButton>
+                  Je reserve ma place
+                  <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
+                </button>
               </div>
               
               {/* Liste des avantages avec animation */}
@@ -162,15 +163,12 @@ export function EarlyBirdOffer() {
                 <p className="text-white/60 mt-2">Mais sans les avantages exclusifs</p>
               </div>
               
-              <CTAButton 
-                href="#" 
-                variant="outline" 
-                className="border-white/30 text-white/90 hover:bg-white/10 text-base sm:text-lg font-bold py-3 px-6 rounded-xl w-full group"
+              <button
+                onClick={() => setShowWaitlistForm(true)}
+                className="border border-white/30 text-white/90 hover:bg-white/10 text-base sm:text-lg font-bold py-3 px-6 rounded-xl w-full group flex items-center justify-center gap-2 transition-all duration-300"
               >
-                <span className="flex items-center justify-center gap-2">
-                  Rejoindre la liste d&apos;attente
-                </span>
-              </CTAButton>
+                Rejoindre la liste d&apos;attente
+              </button>
             </div>
             
             {/* Liste des avantages */}
@@ -212,6 +210,10 @@ export function EarlyBirdOffer() {
           </motion.p>
         </div>
       </motion.div>
+
+      {/* Modaux */}
+      <WaitlistForm isOpen={showWaitlistForm} setIsOpen={setShowWaitlistForm} />
+      <PaymentModal isOpen={showPaymentModal} setIsOpen={setShowPaymentModal} />
     </div>
   );
 }
