@@ -84,7 +84,7 @@ export default function Home() {
                     alt="Personne travaillant sur un projet" 
                     className="object-cover"
                     fill
-                    sizes="(max-width: 768px) 120vw, 50vw"
+                    sizes="(max-width: 778px) 120vw, 50vw"
                     priority
                   />
              
