@@ -51,7 +51,7 @@ export function EarlyBirdOffer() {
               <div className="text-center">
                 <div className="flex items-baseline gap-2 justify-center">
                   <span className="font-koulen text-5xl sm:text-6xl md:text-7xl text-white">
-                    {PRICING.early.price.toLocaleString('fr-FR')}€
+                    {PRICING.early.price.toFixed(2)}€
                   </span>
                   <div className="flex flex-col items-start">
                     <span className="text-white/80">HT</span>
@@ -59,7 +59,7 @@ export function EarlyBirdOffer() {
                   </div>
                 </div>
                 <p className="text-white/80 line-through mt-2">
-                  Au lieu de {PRICING.regular.price.toLocaleString('fr-FR')}€ HT
+                  Au lieu de {PRICING.regular.price.toFixed(2)}€ HT
                 </p>
               </div>
               
