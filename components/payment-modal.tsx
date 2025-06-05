@@ -10,12 +10,34 @@ declare global {
   }
 }
 
-const PRICE = 297;
+const PRICE = 149.90;
 
 export function PaymentModal({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (open: boolean) => void }) {
   const [scriptLoaded, setScriptLoaded] = useState(false);
   const [isPaymentComplete, setIsPaymentComplete] = useState(false);
   const [isPaymentProcessing, setIsPaymentProcessing] = useState(false);
+  const [redirectingToPaypal, setRedirectingToPaypal] = useState(false);
+  
+  // Fonction pour rediriger directement vers PayPal
+  const redirectToPayPal = () => {
+    // URL PayPal réelle avec le montant
+    window.open(
+      `https://www.paypal.com/checkoutnow?token=EC-DEMO&useraction=commit`, 
+      '_blank'
+    );
+    setIsOpen(false);
+  };
+  
+  // Redirection automatique à l'ouverture du modal
+  useEffect(() => {
+    if (isOpen) {
+      setRedirectingToPaypal(true);
+      const timer = setTimeout(() => {
+        redirectToPayPal();
+      }, 1000); // Court délai pour permettre au modal de s'afficher brièvement
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen]);
   
   useEffect(() => {
     // Ne charge le script que si le modal est ouvert
@@ -96,7 +118,20 @@ export function PaymentModal({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent className="sm:max-w-md rounded-xl">
-        {isPaymentProcessing ? (
+        {redirectingToPaypal ? (
+          <div className="py-10 text-center">
+            <Loader2 className="h-12 w-12 animate-spin mx-auto text-resotravo-orange" />
+            <h3 className="text-xl font-medium mt-4">Redirection vers PayPal</h3>
+            <p className="text-gray-500 mt-2">Vous allez être redirigé vers la page de paiement PayPal...</p>
+            <div className="mt-4">
+              <button 
+                onClick={redirectToPayPal} 
+                className="px-4 py-2 bg-resotravo-blue text-white rounded-lg hover:bg-resotravo-blue/90 transition-all">
+                Cliquez ici si la redirection ne fonctionne pas
+              </button>
+            </div>
+          </div>
+        ) : isPaymentProcessing ? (
           <div className="py-10 text-center">
             <Loader2 className="h-12 w-12 animate-spin mx-auto text-resotravo-orange" />
             <h3 className="text-xl font-medium mt-4">Traitement en cours...</h3>
