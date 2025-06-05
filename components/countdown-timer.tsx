@@ -44,7 +44,7 @@ export function CountdownTimer() {
           <div className="bg-resotravo-orange text-white font-koulen rounded-xl w-16 h-16 flex items-center justify-center text-2xl shadow-lg">
             {timeLeft.days}
           </div>
-          <span className="text-xs mt-2 font-medium text-resotravo-orange">Heures</span>
+          <span className="text-xs mt-2 font-medium text-resotravo-orange">Jours</span>
         </div>
         <div className="flex flex-col items-center">
           <div className="bg-resotravo-orange text-white font-koulen rounded-xl w-16 h-16 flex items-center justify-center text-2xl shadow-lg">

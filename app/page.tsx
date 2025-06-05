@@ -177,7 +177,7 @@ export default function Home() {
           <div className="text-center mb-12 sm:mb-16">
             <h2 className="font-koulen text-5xl md:text-6xl lg:text-7xl mb-6">
               <span className="text-white">Comment </span>
-              <span className="text-resotravo-orange">ça marche ?</span>
+              <span className="text-resotravo-orange">Ça marche ?</span>
             </h2>
           </div>
           <HowItWorks />
@@ -188,7 +188,7 @@ export default function Home() {
       <SectionContainer id="why-works" background="white">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="font-koulen text-5xl md:text-6xl lg:text-7xl mb-6">
-            <span className="text-resotravo-blue">Un modèle </span>
+            <span className="text-resotravo-blue">Un modele </span>
             <span className="text-resotravo-orange">qui fait ses preuves</span>
           </h2>
         </div>
@@ -200,7 +200,7 @@ export default function Home() {
         <div className="relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="font-koulen text-5xl md:text-6xl lg:text-7xl mb-6">
-              <span className="text-white">Ils sont déjà </span>
+              <span className="text-white">Ils sont deja </span>
               <span className="text-resotravo-orange">en formation</span>
             </h2>
             
@@ -239,7 +239,7 @@ export default function Home() {
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="font-koulen text-5xl md:text-6xl lg:text-7xl mb-6">
             <span className="text-resotravo-blue">Questions </span>
-            <span className="text-resotravo-orange">fréquentes</span>
+            <span className="text-resotravo-orange">frequentes</span>
           </h2>
         </div>
         <FAQAccordion />

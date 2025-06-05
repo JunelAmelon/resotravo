@@ -11,7 +11,7 @@ import { HelpCircle, MessageCircle, Clock, Globe } from "lucide-react";
 const faqs = [
   {
     icon: <HelpCircle className="w-5 h-5" />,
-    question: "Faut-il des compétences en bâtiment ?",
+    question: "Faut-il des compétences en batiment ?",
     answer: "Non, absolument pas ! Notre formation est conçue pour être accessible à tous, quel que soit votre niveau de départ. Nous vous formons sur tous les aspects nécessaires, et notre réseau d'experts est là pour vous accompagner sur les aspects techniques.",
     color: "text-resotravo-blue"
   },
@@ -29,8 +29,8 @@ const faqs = [
   },
   {
     icon: <Globe className="w-5 h-5" />,
-    question: "Et si je suis à l'étranger ?",
-    answer: "Aucun problème ! Notre formation et nos outils sont 100% en ligne et accessibles depuis n'importe où. Vous pouvez suivre la formation et gérer votre activité entièrement à distance, en français.",
+    question: "Et si je suis a l'etranger ?",
+    answer: "Aucun problème ! Notre formation et nos outils sont 100% en ligne et accessibles depuis n'importe où. Vous pouvez suivre la formation et gérer votre activite entierement a distance, en francais.",
     color: "text-resotravo-orange"
   }
 ];

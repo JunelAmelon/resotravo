@@ -7,7 +7,7 @@ export function HowItWorks() {
   const steps = [
     {
       icon: <BookOpen className="w-8 h-8" />,
-      title: "Formation complète",
+      title: "Formation complete",
       description: "Accédez à notre programme de formation exclusif et devenez un expert du courtage en travaux.",
       color: "bg-resotravo-blue"
     },
@@ -19,7 +19,7 @@ export function HowItWorks() {
     },
     {
       icon: <Target className="w-8 h-8" />,
-      title: "Premiers résultats",
+      title: "Premiers resultats",
       description: "Commencez à générer vos premiers revenus grâce à notre méthode éprouvée.",
       color: "bg-resotravo-blue"
     }
