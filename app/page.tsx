@@ -22,18 +22,13 @@ export default function Home() {
       <SectionContainer 
         id="hero" 
         background="white"
-        className="min-h-[90vh] sm:min-h-screen flex items-center overflow-hidden relative pt-20 pb-12 md:py-0"
+        className="min-h-[90vh] sm:min-h-screen flex items-center justify-center overflow-hidden relative pt-20 pb-12 md:py-0 bg-white"
       >
-        {/* Background pattern */}
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 z-0">
-          <div className="absolute inset-0 opacity-10" style={{ 
-            backgroundImage: "radial-gradient(circle at 25px 25px, #e87e2b 2px, transparent 0)", 
-            backgroundSize: "50px 50px" 
-          }}></div>
-        </div>
+        {/* Fond uniforme */}
+        <div className="absolute inset-0 bg-white z-0"></div>
 
-        <div className="container mx-auto px-4 z-10 relative">
-          <div className="grid lg:grid-cols-5 gap-10 md:gap-14 items-center">
+        <div className="w-full max-w-[2000px] z-10 relative">
+          <div className="grid lg:grid-cols-5 gap-6 md:gap-10 items-center px-4 lg:px-10 xl:px-20">
             {/* Left Column - Text Content - Takes 3/5 of space on large screens */}
             <div className="text-left space-y-8 lg:col-span-3 z-10">
               <div>
