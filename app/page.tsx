@@ -36,7 +36,7 @@ export default function Home() {
                   <span className="text-resotravo-orange">en travaux !</span>
                 </h1>
                 
-                <p className="text-lg sm:text-xl text-gray-600 max-w-xl mb-6 sm:mb-8 leading-relaxed sm:text-justify">Générez facilement un revenu complémentaire sans diplôme ni expérience avec RESOTRAVO. Soyez parmi les 50 premiers inscrits et profitez d&apos;une offre exclusive pour rejoindre le premier réseau de courtage en travaux 100 % digital et humain !<br/><br/>Inscrivez-vous vite, votre opportunité démarre ici !</p>
+                <p className="text-lg sm:text-xl text-gray-600 max-w-xl mb-6 sm:mb-8 leading-relaxed text-justify hyphens-auto">Générez facilement un revenu complémentaire sans diplôme ni expérience avec RESOTRAVO. Soyez parmi les 50 premiers inscrits et profitez d&apos;une offre exclusive pour rejoindre le premier réseau de courtage en travaux 100 % digital et humain !<br/><br/>Inscrivez-vous vite, votre opportunité démarre ici !</p>
               </div>
               
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8">
