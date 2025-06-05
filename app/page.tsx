@@ -22,27 +22,51 @@ export default function Home() {
       <SectionContainer 
         id="hero" 
         background="white"
-        className="min-h-[90vh] sm:min-h-screen flex items-center justify-center pt-24 sm:pt-20 pb-12 sm:pb-16 overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-50"
+        className="min-h-[90vh] sm:min-h-screen flex items-center overflow-hidden relative pt-20 pb-12 md:py-0"
       >
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
-            {/* Left Column - Text Content */}
-            <div className="text-left space-y-8">
+        {/* Background pattern */}
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-gray-100 z-0">
+          <div className="absolute inset-0 opacity-10" style={{ 
+            backgroundImage: "radial-gradient(circle at 25px 25px, #e87e2b 2px, transparent 0)", 
+            backgroundSize: "50px 50px" 
+          }}></div>
+        </div>
 
-              
+        <div className="container mx-auto px-4 z-10 relative">
+          <div className="grid lg:grid-cols-5 gap-10 md:gap-14 items-center">
+            {/* Left Column - Text Content - Takes 3/5 of space on large screens */}
+            <div className="text-left space-y-8 lg:col-span-3 z-10">
               <div>
-                <h1 className="font-koulen text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.1] mb-4 sm:mb-6">
-                  <span className="text-resotravo-blue">Devenez courtier </span>
-                  <span className="text-resotravo-orange">en travaux !</span>
+                <span className="inline-flex items-center px-4 py-2 rounded-full bg-resotravo-orange/10 text-resotravo-orange font-medium text-sm mb-6 animate-pulse">
+                  <span className="w-2 h-2 bg-resotravo-orange rounded-full mr-2"></span>
+                  Offre limitee aux 50 premiers inscrits
+                </span>
+                
+                <h1 className="font-koulen text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[1] tracking-tight mb-6 sm:mb-8">
+                  <span className="text-resotravo-blue">Devenez</span><br/>
+                  <span className="text-resotravo-orange">courtier en</span><br/>
+                  <span className="text-resotravo-blue">travaux!</span>
                 </h1>
                 
-                <p className="text-lg sm:text-xl text-gray-600 max-w-xl mb-6 sm:mb-8 leading-relaxed text-justify hyphens-auto">Générez facilement un revenu complémentaire sans diplôme ni expérience avec RESOTRAVO. Soyez parmi les 50 premiers inscrits et profitez d&apos;une offre exclusive pour rejoindre le premier réseau de courtage en travaux 100 % digital et humain !<br/><br/>Inscrivez-vous vite, votre opportunité démarre ici !</p>
+                <p className="text-lg sm:text-xl text-gray-700 max-w-2xl mb-8 sm:mb-10 leading-relaxed">
+                  Generez facilement un revenu complementaire <span className="font-bold">sans diplome ni experience</span> avec RESOTRAVO. 
+                  <span className="text-resotravo-blue font-semibold"> Rejoignez le premier reseau de courtage en travaux 100% digital et humain!</span>
+                </p>
+
+                <div className="flex flex-col sm:flex-row flex-wrap items-start gap-3 mb-8">
+                  {['Formation complete', 'Support personnalise', 'Outils exclusifs'].map((item, index) => (
+                    <div key={index} className="flex items-center gap-2 text-gray-700">
+                      <CheckCircle className="text-resotravo-blue w-5 h-5 flex-shrink-0" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
               
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8">
-                <div>
-                  <p className="text-gray-500 text-sm mb-1">Tarif Exceptionnel</p>
-                  <div className="flex items-baseline gap-2">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10">
+                <div className="bg-white/70 backdrop-blur-sm py-3 px-5 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
+                  <p className="text-gray-500 text-sm font-medium mb-1">TARIF EXCEPTIONNEL</p>
+                  <div className="flex items-baseline gap-3">
                     <div className="flex flex-col items-start">
                       <span className="text-5xl sm:text-6xl font-koulen text-resotravo-orange">149.90€</span>
                       <span className="text-xs text-gray-500 font-medium -mt-1">HT</span>
@@ -57,30 +81,56 @@ export default function Home() {
                 <CTAButton 
                   href="#signup" 
                   variant="primary"
-                  className="text-lg font-bold group relative overflow-hidden transition-all duration-300 transform hover:scale-105"
+                  className="text-lg font-bold py-4 px-8 shadow-2xl relative overflow-hidden transition-all duration-500 transform hover:scale-105 hover:shadow-resotravo-orange/30 hover:shadow-xl"
                   withIcon
                 >
-                  Je me lance
+                  Je me lance maintenant
                 </CTAButton>
               </div>
             </div>
             
-            {/* Right Column - Image */}
-            <div className="relative aspect-[4/5] w-full max-w-[700px] h-[420px] md:h-[700px] mx-auto">
-              {/* Image covering the whole dotted border area */}
-              <Image
-                src="/herosectionimg.png"
-                alt="Personne travaillant sur un projet"
-                className="object-cover absolute inset-0 w-full h-full rounded-[3rem]"
-                fill
-                sizes="(max-width: 778px) 120vw, 50vw"
-                priority
-                style={{ zIndex: 0 }}
-              />
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-b from-transparent to-black/20 pointer-events-none" style={{ zIndex: 1 }}></div>
-              {/* Dotted border overlay */}
-              <div className="absolute inset-0 rounded-[3rem] border-2 border-dashed border-resotravo-orange/30 pointer-events-none" style={{ zIndex: 2 }}></div>
+            {/* Right Column - Image - Takes 2/5 of space on large screens */}
+            <div className="relative lg:col-span-2 z-0 order-first lg:order-last mb-5 lg:mb-0">
+              <div className="relative w-full aspect-[4/5] max-w-[600px] mx-auto">
+                {/* Decorative elements */}
+                <div className="absolute -top-10 -left-10 w-20 h-20 rounded-full bg-resotravo-blue/10 animate-pulse z-0"></div>
+                <div className="absolute -bottom-5 -right-5 w-16 h-16 rounded-full bg-resotravo-orange/10 animate-pulse z-0"></div>
+                <div className="absolute top-1/2 -right-8 w-12 h-12 rounded-full bg-resotravo-blue/10 animate-pulse z-0"></div>
+                <div className="absolute bottom-1/4 -left-6 w-10 h-10 rounded-full bg-resotravo-orange/10 animate-pulse z-0"></div>
+                
+                {/* Main image container with 3D-like effect */}
+                <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] hover:rotate-1 transition-all duration-700 group">
+                  {/* Image */}
+                  <Image
+                    src="/herosectionimg.png"
+                    alt="Courtier en travaux RESOTRAVO"
+                    className="object-cover w-full h-full"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority
+                    style={{ 
+                      objectPosition: "center",
+                    }}
+                  />
+                  
+                  {/* Glass effect overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-resotravo-blue/10 via-transparent to-resotravo-orange/20 z-10 group-hover:opacity-70 transition-all duration-500"></div>
+                  
+                  {/* Top overlay shine */}
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/30 to-transparent z-10 h-1/4 group-hover:opacity-60 transition-all duration-500"></div>
+                  
+                  {/* Bottom vignette */}
+                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
+                  
+                  {/* Border effect */}
+                  <div className="absolute inset-0 border-4 border-white/20 rounded-3xl z-20"></div>
+                </div>
+                
+                {/* Badge overlay */}
+                <div className="absolute -bottom-4 -right-4 md:right-5 bg-resotravo-orange text-white font-koulen text-xl py-3 px-6 rounded-full shadow-xl transform rotate-3 z-10 hover:scale-110 transition-all duration-300">
+                  DEBUTEZ MAINTENANT
+                </div>
+              </div>
             </div>
           </div>
         </div>

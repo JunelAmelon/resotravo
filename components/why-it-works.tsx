@@ -31,33 +31,33 @@ export function WhyItWorks() {
   const features = [
     {
       icon: <Briefcase className="w-6 h-6" />,
-      title: "Aucun Droit d'Entrée",
-      description: "Démarrez sans investissement initial"
+      title: "Aucun Droit d&apos;Entree",
+      description: "Demarrez sans investissement initial"
     },
     {
       icon: <Target className="w-6 h-6" />,
       title: "Engagement Flexible",
-      description: "Adaptez votre activité à vos besoins"
+      description: "Adaptez votre activite a vos besoins"
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "RC Pro Négociée",
+      title: "RC Pro Negociee",
       description: "Protection professionnelle optimale"
     },
     {
       icon: <Star className="w-6 h-6" />,
       title: "Juridique Inclus",
-      description: "Support légal et administratif complet"
+      description: "Support legal et administratif complet"
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "Coaching Personnalisé",
+      title: "Coaching Personnalise",
       description: "Accompagnement sur mesure"
     },
     {
       icon: <TrendingUp className="w-6 h-6" />,
       title: "Marketing Inclus",
-      description: "Stratégie digitale clé en main"
+      description: "Strategie digitale cle en main"
     }
   ];
 
@@ -68,12 +68,12 @@ export function WhyItWorks() {
 
       <div className="bg-resotravo-blue text-white p-8 rounded-2xl mb-16">
         <p className="text-xl text-center leading-relaxed">
-          RESOTRAVO est né de l'expérience d'AXIMOTRAVO, un réseau solide lancé en 2015.
+          RESOTRAVO est ne de l&apos;experience d&apos;AXIMOTRAVO, un reseau solide lance en 2015.
           <br />
           <span className="font-koulen text-2xl block mt-4">
-            Nous avons mixé la puissance du digital, la proximité humaine,
+            Nous avons mixe la puissance du digital, la proximite humaine,
             <br />
-            et un accompagnement réel.
+            et un accompagnement reel.
           </span>
         </p>
       </div>
