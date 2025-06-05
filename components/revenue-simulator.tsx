@@ -7,7 +7,7 @@ import { ArrowRight, Clock, Target, TrendingUp, BarChart3, Award, Check } from "
 import { motion } from "framer-motion";
 
 // Valeur moyenne d'une commission par projet
-const avgCommission = 2350;
+const avgCommission = 1200;
 
 export function RevenueSimulator() {
   const [hoursPerWeek, setHoursPerWeek] = useState(10);

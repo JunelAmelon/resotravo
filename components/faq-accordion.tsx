@@ -11,7 +11,7 @@ import { HelpCircle, MessageCircle, Clock, Globe } from "lucide-react";
 const faqs = [
   {
     icon: <HelpCircle className="w-5 h-5" />,
-    question: "Faut-il des compétences en batiment ?",
+    question: "Faut-il des competences en batiment ?",
     answer: "Non, absolument pas ! Notre formation est conçue pour être accessible à tous, quel que soit votre niveau de départ. Nous vous formons sur tous les aspects nécessaires, et notre réseau d'experts est là pour vous accompagner sur les aspects techniques.",
     color: "text-resotravo-blue"
   },

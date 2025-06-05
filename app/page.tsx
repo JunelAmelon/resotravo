@@ -40,13 +40,13 @@ export default function Home() {
                   Générez facilement un revenu complémentaire sans diplôme ni expérience avec RESOTRAVO.
                   Soyez parmi les 50 premiers inscrits et profitez d&apos;une offre exclusive pour rejoindre le premier réseau de courtage en travaux 100 % digital et humain ! <br/>
                   <br/>
-                  Inscrivez-vous vite : votre opportunité démarre ici !
+                  Inscrivez-vous vite, votre opportunité démarre ici !
                 </p>
               </div>
               
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-8">
                 <div>
-                  <p className="text-gray-500 text-sm mb-1">Prix Early Bird</p>
+                  <p className="text-gray-500 text-sm mb-1">Tarif Exceptionnel</p>
                   <div className="flex items-baseline gap-2">
                     <div className="flex flex-col items-start">
                       <span className="text-5xl sm:text-6xl font-koulen text-resotravo-orange">149.90€</span>
@@ -77,12 +77,12 @@ export default function Home() {
                 <div className="absolute -inset-6 rounded-[3rem] border-2 border-dashed border-resotravo-orange/30"></div>
                 
                 {/* Image container with gradient border */}
-                <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden relative">
+                <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden relative w-full h-full">
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20"></div>
                   <Image 
                     src="/herosectionimg.png" 
                     alt="Personne travaillant sur un projet" 
-                    className="object-cover"
+                    className="object-cover w-full h-full"
                     fill
                     sizes="(max-width: 778px) 120vw, 50vw"
                     priority
@@ -100,7 +100,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h2 className="font-koulen text-5xl md:text-6xl lg:text-7xl mb-6">
             <span className="block text-resotravo-blue">Un moyen simple</span>
-            <span className="block text-resotravo-orange">et moderne de réussir</span>
+            <span className="block text-resotravo-orange">et moderne de reussir</span>
           </h2>
           
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
@@ -124,7 +124,7 @@ export default function Home() {
             <div className="w-16 h-16 bg-resotravo-orange rounded-xl flex items-center justify-center mb-6 text-white transform -rotate-6">
               <Laptop className="w-8 h-8" />
             </div>
-            <h3 className="font-koulen text-2xl mb-4 text-resotravo-orange">On Vous Équipe</h3>
+            <h3 className="font-koulen text-2xl mb-4 text-resotravo-orange">On Vous Equipe</h3>
             <p className="text-gray-600">
               Tous les <span className="font-semibold">outils nécessaires</span> pour réussir dans le courtage en travaux.
             </p>
