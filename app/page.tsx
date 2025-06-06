@@ -9,10 +9,17 @@ import { HowItWorks } from "@/components/how-it-works";
 import { WhyItWorks } from "@/components/why-it-works";
 import { FAQAccordion } from "@/components/faq-accordion";
 import { Footer } from "@/components/footer";
-import { ArrowRight, GraduationCap, Laptop, Shield, CheckCircle } from "lucide-react";
+import { StarsBackground } from "@/components/stars-background";
+import { ArrowRight, GraduationCap, Laptop, Shield, CheckCircle, ChevronRight, CreditCard } from "lucide-react";
 import Image from "next/image";
+import { WaitlistForm } from "@/components/waitlist-form";
+import { PaymentModal } from "@/components/payment-modal";
+import { useState } from "react";
 
 export default function Home() {
+  const [showWaitlistForm, setShowWaitlistForm] = useState(false);
+  const [showPaymentModal, setShowPaymentModal] = useState(false);
+
   return (
     <>
       <NotificationPopup />
@@ -34,7 +41,7 @@ export default function Home() {
               <div>
                 <span className="inline-flex items-center px-4 py-2 rounded-full bg-resotravo-orange/10 text-resotravo-orange font-medium text-sm mb-6 animate-pulse">
                   <span className="w-2 h-2 bg-resotravo-orange rounded-full mr-2"></span>
-                  Offre limitee aux 50 premiers inscrits
+                  Offre limitée aux 50 premiers inscrits
                 </span>
                 
                 <h1 className="font-koulen text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[1] tracking-tight mb-6 sm:mb-8">
@@ -44,8 +51,8 @@ export default function Home() {
                 </h1>
                 
                 <p className="text-lg sm:text-xl text-gray-700 max-w-2xl mb-8 sm:mb-10 leading-relaxed">
-                  Generez facilement un revenu complementaire <span className="font-bold">sans diplome ni experience</span> avec RESOTRAVO. 
-                  <span className="text-resotravo-blue font-semibold"> Rejoignez le premier reseau de courtage en travaux 100% digital et humain!</span>
+                  Générez facilement un revenu complémentaire <span className="font-bold">sans diplome ni experience</span> avec RESOTRAVO. 
+                  <span className="text-resotravo-blue font-semibold"> Rejoignez le premier réseau de courtage en travaux 100% digital et humain!</span>
                 </p>
 
                 <div className="flex flex-col sm:flex-row flex-wrap items-start gap-3 mb-8">
@@ -73,14 +80,23 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <CTAButton 
-                  href="#signup" 
-                  variant="primary"
-                  className="text-lg font-bold py-4 px-8 shadow-2xl relative overflow-hidden transition-all duration-500 transform hover:scale-105 hover:shadow-resotravo-orange/30 hover:shadow-xl"
-                  withIcon
-                >
-                  Je me lance maintenant
-                </CTAButton>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <button 
+                    onClick={() => setShowPaymentModal(true)}
+                    className="text-lg font-bold py-4 px-8 shadow-2xl relative overflow-hidden transition-all duration-500 transform hover:scale-105 hover:shadow-resotravo-orange/30 hover:shadow-xl bg-resotravo-blue text-white rounded-full inline-flex items-center gap-2"
+                  >
+                    Je paie maintenant
+                    <CreditCard className="w-5 h-5" />
+                  </button>
+                  
+                  <button 
+                    onClick={() => setShowWaitlistForm(true)}
+                    className="text-lg font-bold py-4 px-8 shadow-2xl relative overflow-hidden transition-all duration-500 transform hover:scale-105 hover:shadow-resotravo-orange/30 hover:shadow-xl bg-white border border-resotravo-blue text-resotravo-blue rounded-full inline-flex items-center gap-2"
+                  >
+                    Liste d&apos;attente
+                    <ChevronRight className="w-5 h-5" />
+                  </button>
+                </div>
               </div>
             </div>
             
@@ -123,7 +139,7 @@ export default function Home() {
                 
                 {/* Badge overlay */}
                 <div className="absolute -bottom-4 -right-4 md:right-5 bg-resotravo-orange text-white font-koulen text-xl py-3 px-6 rounded-full shadow-xl transform rotate-3 z-10 hover:scale-110 transition-all duration-300">
-                  DEBUTEZ MAINTENANT
+                  DÉBUTEZ MAINTENANT
                 </div>
               </div>
             </div>
@@ -190,6 +206,10 @@ export default function Home() {
             </h2>
           </div>
           <EarlyBirdOffer />
+      
+      {/* Modaux pour les appels à l'action de la page d'accueil */}
+      <WaitlistForm isOpen={showWaitlistForm} setIsOpen={setShowWaitlistForm} />
+      <PaymentModal isOpen={showPaymentModal} setIsOpen={setShowPaymentModal} />
         </div>
       </SectionContainer>
       
