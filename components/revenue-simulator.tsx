@@ -48,7 +48,7 @@ export function RevenueSimulator() {
                   </div>
                   <div>
                     <label htmlFor="hours" className="block font-medium text-gray-800">
-                      DISPONIBILITE
+                      DISPONIBILITÉ
                     </label>
                     <span className="text-sm text-gray-500">
                       Heures par semaine
@@ -196,11 +196,10 @@ export function RevenueSimulator() {
                 </div>
               </div>
               
-              {/* Note sur la commission */}
-              <div className="mt-6">
-                <div className="bg-white/15 rounded-lg p-4 text-center">
-                  <p className="text-sm">
-                    Base sur une commission moyenne de {avgCommission.toLocaleString("fr-FR")}€ par projet
+              <div className="mt-8">
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center">
+                  <p className="text-sm text-white/90">
+                    Basé sur une commission moyenne de {avgCommission.toLocaleString('fr-FR')}€ par projet
                   </p>
                 </div>
               </div>

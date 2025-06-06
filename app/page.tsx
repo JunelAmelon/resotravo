@@ -179,7 +179,7 @@ export default function Home() {
             </div>
             <h3 className="font-koulen text-2xl mb-4 text-resotravo-orange">On Vous ÉQUIPE</h3>
             <p className="text-gray-600">
-              Tous les <span className="font-semibold">outils necessaires</span> pour réussir dans le courtage en travaux.
+              Tous les <span className="font-semibold">outils nécessaires</span> pour réussir dans le courtage en travaux.
             </p>
           </div>
           
