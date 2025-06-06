@@ -1,3 +1,5 @@
+"use client";
+
 import { NotificationPopup } from "@/components/notification-popup";
 import { SectionContainer } from "@/components/section-container";
 import { Header } from "@/components/header";
@@ -9,7 +11,6 @@ import { HowItWorks } from "@/components/how-it-works";
 import { WhyItWorks } from "@/components/why-it-works";
 import { FAQAccordion } from "@/components/faq-accordion";
 import { Footer } from "@/components/footer";
-import { StarsBackground } from "@/components/stars-background";
 import { ArrowRight, GraduationCap, Laptop, Shield, CheckCircle, ChevronRight, CreditCard } from "lucide-react";
 import Image from "next/image";
 import { WaitlistForm } from "@/components/waitlist-form";
