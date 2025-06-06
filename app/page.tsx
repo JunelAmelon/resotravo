@@ -296,7 +296,7 @@ export default function Home() {
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="font-koulen text-5xl md:text-6xl lg:text-7xl mb-6">
             <span className="text-resotravo-blue">Questions </span>
-            <span className="text-resotravo-orange">FREQUENTES</span>
+            <span className="text-resotravo-orange">FRÉQUENTES</span>
           </h2>
         </div>
         <FAQAccordion />
