@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import "@/app/efficiency-bar.css";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { ArrowRight, Clock, Target, TrendingUp, BarChart3, Award, Check } from "lucide-react";
@@ -138,8 +139,9 @@ export function RevenueSimulator() {
               </div>
 
               <div className="relative h-2 bg-gray-200 rounded-full overflow-hidden">
+                {/* Utilisation de classes CSS prédéfinies pour éliminer tout style inline */}
                 <div 
-                  className="absolute top-0 left-0 h-full rounded-full bg-resotravo-blue" style={{width: `${efficiencyScore}%`}}
+                  className={`absolute top-0 left-0 h-full rounded-full bg-resotravo-blue efficiency-bar-${Math.round(efficiencyScore)}`}
                 ></div>
               </div>
               <div className="flex justify-between mt-2">

@@ -31,7 +31,7 @@ export function WhyItWorks() {
   const features = [
     {
       icon: <Briefcase className="w-6 h-6" />,
-      title: "Aucun Droit d'EntrÉe",
+      title: "Aucun Droit d'Entrée",
       description: "Démarrez sans investissement initial"
     },
     {
@@ -41,7 +41,7 @@ export function WhyItWorks() {
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "RC Pro NÉgociÉe",
+      title: "RC Pro Négociée",
       description: "Protection professionnelle optimale"
     },
     {
@@ -51,7 +51,7 @@ export function WhyItWorks() {
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "Coaching PersonnalisÉ",
+      title: "Coaching Personnalisé",
       description: "Accompagnement sur mesure"
     },
     {
