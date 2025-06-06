@@ -81,19 +81,19 @@ export function EarlyBirdOffer() {
           >
             <Timer className="w-5 h-5 text-white animate-pulse" />
             <span className="font-koulen text-lg text-white">
-              OFFRE LIMITEE - AVANTAGES EXCLUSIFS
+              OFFRE LIMITÉE - AVANTAGES EXCLUSIFS
             </span>
           </motion.div>
         </div>
 
         {/* Comparatif d'options */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-          {/* Option 1: Paiement immediat */}
+          {/* Option 1: Paiement immédiat */}
           <div className="relative overflow-hidden bg-gradient-to-br from-resotravo-blue to-resotravo-blue p-6 sm:p-8 border-r border-white/20">
             <div className="relative z-10">
               <div className="text-center mb-6">
-                <h3 className="font-koulen text-2xl text-white mb-2">PAIEMENT IMMEDIAT</h3>
-                <p className="text-white/80 mb-6">Acces complet a tous les avantages exclusifs</p>
+                <h3 className="font-koulen text-2xl text-white mb-2">PAIEMENT IMMÉDIAT</h3>
+                <p className="text-white/80 mb-6">Accès complet à tous les avantages exclusifs</p>
                 
                 <motion.div 
                   className="rounded-xl bg-green-400/20 p-4 mb-6 border border-green-400/30"
@@ -206,7 +206,7 @@ export function EarlyBirdOffer() {
             animate={pulsing ? { scale: [1, 1.05, 1] } : {}}
             transition={{ duration: 0.8 }}
           >
-            NE MANQUEZ PAS CETTE OPPORTUNITE ! OFFRE LIMITEE AUX 50 PREMIERS INSCRITS
+            NE MANQUEZ PAS CETTE OPPORTUNITÉ ! OFFRE LIMITÉE AUX 50 PREMIERS INSCRITS
           </motion.p>
         </div>
       </motion.div>

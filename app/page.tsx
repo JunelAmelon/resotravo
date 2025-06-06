@@ -51,12 +51,12 @@ export default function Home() {
                 </h1>
                 
                 <p className="text-lg sm:text-xl text-gray-700 max-w-2xl mb-8 sm:mb-10 leading-relaxed">
-                  Générez facilement un revenu complémentaire <span className="font-bold">sans diplome ni experience</span> avec RESOTRAVO. 
+                  Générez facilement un revenu complémentaire <span className="font-bold">sans diplôme ni expérience</span> avec RESOTRAVO. 
                   <span className="text-resotravo-blue font-semibold"> Rejoignez le premier réseau de courtage en travaux 100% digital et humain!</span>
                 </p>
 
                 <div className="flex flex-col sm:flex-row flex-wrap items-start gap-3 mb-8">
-                  {['Formation complete', 'Support personnalise', 'Outils exclusifs'].map((item, index) => (
+                  {['Formation complète', 'Support personnalisé', 'Outils exclusifs'].map((item, index) => (
                     <div key={index} className="flex items-center gap-2 text-gray-700">
                       <CheckCircle className="text-resotravo-blue w-5 h-5 flex-shrink-0" />
                       <span>{item}</span>

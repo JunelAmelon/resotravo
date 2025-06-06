@@ -31,33 +31,33 @@ export function WhyItWorks() {
   const features = [
     {
       icon: <Briefcase className="w-6 h-6" />,
-      title: "Aucun Droit d&apos;Entree",
-      description: "Demarrez sans investissement initial"
+      title: "Aucun Droit d&apos;Entrée",
+      description: "Démarrez sans investissement initial"
     },
     {
       icon: <Target className="w-6 h-6" />,
       title: "Engagement Flexible",
-      description: "Adaptez votre activite a vos besoins"
+      description: "Adaptez votre activité à vos besoins"
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "RC Pro Negociee",
+      title: "RC Pro Négociée",
       description: "Protection professionnelle optimale"
     },
     {
       icon: <Star className="w-6 h-6" />,
       title: "Juridique Inclus",
-      description: "Support legal et administratif complet"
+      description: "Support légal et administratif complet"
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "Coaching Personnalise",
+      title: "Coaching Personnalisé",
       description: "Accompagnement sur mesure"
     },
     {
       icon: <TrendingUp className="w-6 h-6" />,
       title: "Marketing Inclus",
-      description: "Strategie digitale cle en main"
+      description: "Stratégie digitale clé en main"
     }
   ];
 

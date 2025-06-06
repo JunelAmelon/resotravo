@@ -11,26 +11,26 @@ import { HelpCircle, MessageCircle, Clock, Globe } from "lucide-react";
 const faqs = [
   {
     icon: <HelpCircle className="w-5 h-5" />,
-    question: "Faut-il des competences en batiment ?",
-    answer: "Non, absolument pas ! Notre formation est concue pour etre accessible a tous, quel que soit votre niveau de depart. Nous vous formons sur tous les aspects necessaires, et notre reseau d'experts est la pour vous accompagner sur les aspects techniques.",
+    question: "Faut-il des compétences en bâtiment ?",
+    answer: "Non, absolument pas ! Notre formation est conçue pour être accessible à tous, quel que soit votre niveau de départ. Nous vous formons sur tous les aspects nécessaires, et notre réseau d'experts est là pour vous accompagner sur les aspects techniques.",
     color: "text-resotravo-blue"
   },
   {
     icon: <Clock className="w-5 h-5" />,
     question: "Combien de temps dois-je y consacrer ?",
-    answer: "C'est vous qui decidez ! Notre plateforme est accessible 24/7 et vous permet d'avancer a votre rythme. Que vous souhaitiez en faire une activite principale ou complementaire, vous gardez une flexibilite totale dans la gestion de votre temps.",
+    answer: "C'est vous qui décidez ! Notre plateforme est accessible 24/7 et vous permet d'avancer à votre rythme. Que vous souhaitiez en faire une activité principale ou complémentaire, vous gardez une flexibilité totale dans la gestion de votre temps.",
     color: "text-resotravo-orange"
   },
   {
     icon: <MessageCircle className="w-5 h-5" />,
     question: "Est-ce que c'est rentable ?",
-    answer: "Oui ! Grace a nos partenariats exclusifs et nos outils optimises, nos courtiers generent en moyenne 1500€ de commission par projet. Avec notre accompagnement et notre formation, vous apprenez a maximiser vos gains des le debut.",
+    answer: "Oui ! Grâce à nos partenariats exclusifs et nos outils optimisés, nos courtiers génèrent en moyenne 1500€ de commission par projet. Avec notre accompagnement et notre formation, vous apprenez à maximiser vos gains dès le début.",
     color: "text-resotravo-blue"
   },
   {
     icon: <Globe className="w-5 h-5" />,
-    question: "Et si je suis a l'etranger ?",
-    answer: "Aucun probleme ! Notre formation et nos outils sont 100% en ligne et accessibles depuis n'importe ou. Vous pouvez suivre la formation et gerer votre activite entierement a distance, en francais.",
+    question: "Et si je suis à l'étranger ?",
+    answer: "Aucun problème ! Notre formation et nos outils sont 100% en ligne et accessibles depuis n'importe où. Vous pouvez suivre la formation et gérer votre activité entièrement à distance, en français.",
     color: "text-resotravo-orange"
   }
 ];
