@@ -31,7 +31,7 @@ export function WhyItWorks() {
   const features = [
     {
       icon: <Briefcase className="w-6 h-6" />,
-      title: "Aucun Droit d'Entrée",
+      title: "Aucun Droit d'EntrÉe",
       description: "Démarrez sans investissement initial"
     },
     {
@@ -41,7 +41,7 @@ export function WhyItWorks() {
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "RC Pro Négociée",
+      title: "RC Pro NÉgociÉ",
       description: "Protection professionnelle optimale"
     },
     {
@@ -51,7 +51,7 @@ export function WhyItWorks() {
     },
     {
       icon: <Users className="w-6 h-6" />,
-      title: "Coaching Personnalisé",
+      title: "Coaching PersonnalisÉ",
       description: "Accompagnement sur mesure"
     },
     {
@@ -68,12 +68,12 @@ export function WhyItWorks() {
 
       <div className="bg-resotravo-blue text-white p-8 rounded-2xl mb-16">
         <p className="text-xl text-center leading-relaxed">
-          RESOTRAVO est ne de l&apos;experience d&apos;AXIMOTRAVO, un reseau solide lance en 2015.
+          RESOTRAVO est né de l&apos;experience d&apos;AXIMOTRAVO, un reseau solide lance en 2015.
           <br />
           <span className="font-koulen text-2xl block mt-4">
-            Nous avons mixe la puissance du digital, la proximite humaine,
+            Nous avons mixÉ la puissance du digital, la proximitÉ humaine,
             <br />
-            et un accompagnement reel.
+            et un accompagnement rÉel.
           </span>
         </p>
       </div>
