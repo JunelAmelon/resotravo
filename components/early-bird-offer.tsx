@@ -167,7 +167,7 @@ export function EarlyBirdOffer() {
             <div className="text-center mb-6">
               <h3 className="font-koulen text-2xl text-white/90 mb-2">LISTE D&apos;ATTENTE</h3>
               <p className="text-white/70 mb-2">Abonnement mensuel démarrant en octobre 2025</p>
-              <p className="text-white/70 mb-6">Réservez votre place sans bénéficier des avantages exclusifs (formule bboien)</p>
+              <p className="text-white/70 mb-6">Réservez sans profiter des avantages exclusifs</p>
               
               <div className="rounded-xl bg-gray-700/30 p-4 mb-6 border border-gray-600/30">
                 <div className="flex items-baseline gap-2 justify-center">
