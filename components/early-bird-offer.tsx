@@ -167,16 +167,24 @@ export function EarlyBirdOffer() {
             <div className="text-center mb-6">
               <h3 className="font-koulen text-2xl text-white/90 mb-2">LISTE D&apos;ATTENTE</h3>
               <p className="text-white/70 mb-2">Abonnement mensuel démarrant en octobre 2025</p>
-              <p className="text-white/70 mb-8">Réservez votre place sans payer maintenant</p>
+              <p className="text-white/70 mb-6">Réservez votre place sans bénéficier des avantages exclusifs</p>
               
               <div className="rounded-xl bg-gray-700/30 p-4 mb-6 border border-gray-600/30">
-                <div>
-                  <span className="font-koulen text-3xl text-white/80">{PRICING.early.price.toFixed(2)}€</span>
-                  <span className="text-white/60 block">HT/mois</span>
-                  <span className="bg-green-600/20 text-green-500 py-1 px-2 rounded-md inline-block mt-1 font-medium">-25%</span>
+                <div className="flex items-baseline gap-2 justify-center">
+                  <span className="font-koulen text-4xl sm:text-5xl text-white/80">
+                    {PRICING.early.price.toFixed(2)}€
+                  </span>
+                  <div className="flex flex-col items-start">
+                    <span className="text-white/80 font-medium text-lg">HT/mois</span>
+                    <span className="bg-green-600/20 text-green-500 py-1 px-2 rounded-md font-medium">-25%</span>
+                  </div>
                 </div>
-                <p className="text-white/60 mt-2">Au lieu de {PRICING.regular.price.toFixed(2)}€ HT/mois</p>
-                <p className="text-white/60 mt-2">Abonnement annuel: {(PRICING.early.price * 12).toFixed(2)}€ HT</p>
+                <p className="text-white/70 line-through mt-2">
+                  Au lieu de {PRICING.regular.price.toFixed(2)}€ HT/mois
+                </p>
+                <p className="text-green-300 mt-2 text-sm">
+                  Abonnement annuel: {(PRICING.early.price * 12).toFixed(2)}€ HT
+                </p>
               </div>
               
               <button
