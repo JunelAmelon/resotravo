@@ -84,11 +84,11 @@ export function WaitlistForm({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
               </DialogTitle>
               <DialogDescription className="text-center">
                 <div className="bg-green-50 text-green-700 p-3 rounded-lg mb-4 text-sm">
-                  <p className="font-medium">En rejoignant la liste d&apos;attente, vous beneficierez :</p>
+                  <p className="font-medium">En rejoignant la liste d&apos;attente, vous bénéficierez :</p>
                   <ul className="mt-2 space-y-1 text-left">
                     <li className="flex items-start">
                       <Check className="h-5 w-5 mr-2 flex-shrink-0" />
-                      <span>D&apos;une reduction de 25% sur la formation</span>
+                      <span>D&apos;une réduction de 25% sur la formation</span>
                     </li>
                     <li className="flex items-start">
                       <Check className="h-5 w-5 mr-2 flex-shrink-0" />

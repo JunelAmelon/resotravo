@@ -29,7 +29,7 @@ export function EarlyBirdOffer() {
     {
       icon: <Gift className="w-8 h-8" />,
       title: "Livret blanc EXCLUSIF",
-      description: "Accédez a des connaissances exclusives du secteur",
+      description: "Accédez à des connaissances exclusives du secteur",
       color: "bg-resotravo-blue",
       available: true
     },
@@ -122,7 +122,7 @@ export function EarlyBirdOffer() {
                   onClick={() => setShowPaymentModal(true)}
                   className="bg-white text-resotravo-blue hover:bg-white/90 text-base sm:text-lg font-bold py-3 px-6 rounded-xl shadow-xl w-full group flex items-center justify-center gap-2 transition-all duration-300"
                 >
-                  Je reserve ma place
+                  Je réserve ma place
                   <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
               </div>
@@ -164,8 +164,12 @@ export function EarlyBirdOffer() {
               <p className="text-white/70 mb-8">Réservez votre place sans payer maintenant</p>
               
               <div className="rounded-xl bg-gray-700/30 p-4 mb-6 border border-gray-600/30">
-                <span className="font-koulen text-3xl text-white/80">GRATUIT</span>
-                <p className="text-white/60 mt-2">Mais sans les avantages exclusifs</p>
+                <div>
+                  <span className="font-koulen text-3xl text-white/80">{PRICING.early.price.toFixed(2)}€</span>
+                  <span className="text-white/60 ml-1">HT/mois</span>
+                </div>
+                <p className="text-white/60 mt-1">À partir d&apos;octobre 2025</p>
+                <p className="text-white/60 mt-2">Inscription gratuite, prix préférentiel garanti</p>
               </div>
               
               <button
