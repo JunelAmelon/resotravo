@@ -29,21 +29,21 @@ export function EarlyBirdOffer() {
     {
       icon: <Gift className="w-8 h-8" />,
       title: "Livret blanc EXCLUSIF",
-      description: "Accedez a des connaissances exclusives du secteur",
+      description: "Accédez a des connaissances exclusives du secteur",
       color: "bg-resotravo-blue",
       available: true
     },
     {
       icon: <Rocket className="w-8 h-8" />,
-      title: "1 mois OFFERT",
-      description: "Demarrez sans frais supplementaires",
+      title: "1 mois INCLUS",
+      description: "Premier mois inclus dans l'abonnement",
       color: "bg-resotravo-orange",
       available: true
     },
     {
       icon: <Globe className="w-8 h-8" />,
-      title: "Site web OFFERT",
-      description: "Votre presence en ligne cle en main",
+      title: "Site web INCLUS",
+      description: "Votre présence en ligne clé en main",
       color: "bg-resotravo-blue",
       available: true
     }
@@ -81,7 +81,7 @@ export function EarlyBirdOffer() {
           >
             <Timer className="w-5 h-5 text-white animate-pulse" />
             <span className="font-koulen text-lg text-white">
-              OFFRE LIMITÉE - AVANTAGES EXCLUSIFS
+              OFFRE LIMITÉE - TARIF PRÉFÉRENTIEL
             </span>
           </motion.div>
         </div>
@@ -93,6 +93,7 @@ export function EarlyBirdOffer() {
             <div className="relative z-10">
               <div className="text-center mb-6">
                 <h3 className="font-koulen text-2xl text-white mb-2">PAIEMENT IMMÉDIAT</h3>
+                <p className="text-white/80 mb-2">Abonnement mensuel démarrant en octobre 2025</p>
                 <p className="text-white/80 mb-6">Accès complet à tous les avantages exclusifs</p>
                 
                 <motion.div 
@@ -105,12 +106,15 @@ export function EarlyBirdOffer() {
                       {PRICING.early.price.toFixed(2)}€
                     </span>
                     <div className="flex flex-col items-start">
-                      <span className="text-white/80">HT</span>
+                      <span className="text-white/80">HT/mois</span>
                       <Badge className="bg-white/20 text-white border-0">-25%</Badge>
                     </div>
                   </div>
                   <p className="text-white/80 line-through mt-2">
-                    Au lieu de {PRICING.regular.price.toFixed(2)}€ HT
+                    Au lieu de {PRICING.regular.price.toFixed(2)}€ HT/mois
+                  </p>
+                  <p className="text-green-300 mt-2 text-sm">
+                    Abonnement annuel: {(PRICING.early.price * 12).toFixed(2)}€ HT
                   </p>
                 </motion.div>
                 
@@ -156,7 +160,8 @@ export function EarlyBirdOffer() {
           <div className="p-6 sm:p-8 bg-gray-800">
             <div className="text-center mb-6">
               <h3 className="font-koulen text-2xl text-white/90 mb-2">LISTE D&apos;ATTENTE</h3>
-              <p className="text-white/70 mb-6">Acces standard sans les avantages exclusifs</p>
+              <p className="text-white/70 mb-2">Tarif préférentiel garanti pour octobre 2025</p>
+              <p className="text-white/70 mb-8">Réservez votre place sans payer maintenant</p>
               
               <div className="rounded-xl bg-gray-700/30 p-4 mb-6 border border-gray-600/30">
                 <span className="font-koulen text-3xl text-white/80">GRATUIT</span>
