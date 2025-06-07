@@ -71,7 +71,8 @@
     @apply bg-background text-foreground;
   }
   .font-koulen {
-    font-family: 'Koulen', sans-serif;
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 0.5px; /* Améliorer la lisibilité */
   }
   .font-libre {
     font-family: 'Libre Franklin', sans-serif;
