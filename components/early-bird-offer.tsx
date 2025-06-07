@@ -87,7 +87,7 @@ export function EarlyBirdOffer() {
         </div>
 
         {/* Comparatif d'options */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
+        <div id="offer-options" className="grid grid-cols-1 md:grid-cols-2 gap-0">
           {/* Option 1: Paiement immédiat */}
           <div className="relative overflow-hidden bg-gradient-to-br from-resotravo-blue to-resotravo-blue p-6 sm:p-8 border-r border-white/20">
             <div className="relative z-10">
@@ -106,7 +106,7 @@ export function EarlyBirdOffer() {
                       {PRICING.early.price.toFixed(2)}€
                     </span>
                     <div className="flex flex-col items-start">
-                      <span className="text-white/80">HT/mois</span>
+                      <span className="text-white/80 font-medium text-lg">HT/mois</span>
                       <Badge className="bg-white/20 text-white border-0">-25%</Badge>
                     </div>
                   </div>
@@ -119,13 +119,19 @@ export function EarlyBirdOffer() {
                 </motion.div>
                 
                 <button 
-                  onClick={() => setShowPaymentModal(true)}
+                  onClick={() => {
+                    const optionsSection = document.getElementById('offer-options');
+                    if (optionsSection) {
+                      optionsSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
                   className="bg-white text-resotravo-blue hover:bg-white/90 text-base sm:text-lg font-bold py-3 px-6 rounded-xl shadow-xl w-full group flex items-center justify-center gap-2 transition-all duration-300"
                 >
                   Je réserve ma place
                   <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
               </div>
+
               
               {/* Liste des avantages avec animation */}
               <div className="space-y-3 mt-6">
@@ -160,16 +166,17 @@ export function EarlyBirdOffer() {
           <div className="p-6 sm:p-8 bg-gray-800">
             <div className="text-center mb-6">
               <h3 className="font-koulen text-2xl text-white/90 mb-2">LISTE D&apos;ATTENTE</h3>
-              <p className="text-white/70 mb-2">Tarif préférentiel garanti pour octobre 2025</p>
+              <p className="text-white/70 mb-2">Abonnement mensuel démarrant en octobre 2025</p>
               <p className="text-white/70 mb-8">Réservez votre place sans payer maintenant</p>
               
               <div className="rounded-xl bg-gray-700/30 p-4 mb-6 border border-gray-600/30">
                 <div>
                   <span className="font-koulen text-3xl text-white/80">{PRICING.early.price.toFixed(2)}€</span>
-                  <span className="text-white/60 ml-1">HT/mois</span>
+                  <span className="text-white/60 block">HT/mois</span>
+                  <span className="bg-green-600/20 text-green-500 py-1 px-2 rounded-md inline-block mt-1 font-medium">-25%</span>
                 </div>
-                <p className="text-white/60 mt-1">À partir d&apos;octobre 2025</p>
-                <p className="text-white/60 mt-2">Inscription gratuite, prix préférentiel garanti</p>
+                <p className="text-white/60 mt-2">Au lieu de {PRICING.regular.price.toFixed(2)}€ HT/mois</p>
+                <p className="text-white/60 mt-2">Abonnement annuel: {(PRICING.early.price * 12).toFixed(2)}€ HT</p>
               </div>
               
               <button
