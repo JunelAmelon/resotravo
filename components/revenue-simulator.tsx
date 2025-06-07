@@ -56,8 +56,8 @@ export function RevenueSimulator() {
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-100">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-resotravo-blue flex items-center justify-center">
-                    <Clock className="w-5 h-5 text-white" />
+                  <div className="w-12 h-12 rounded-lg bg-resotravo-blue flex items-center justify-center">
+                    <Clock className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <label htmlFor="implication" className="block font-medium text-gray-800">
@@ -86,7 +86,7 @@ export function RevenueSimulator() {
                 step={1} 
                 value={[implicationLevel]} 
                 onValueChange={(value) => setImplicationLevel(value[0])}
-                className="w-full [&>span]:bg-resotravo-blue [&>span]:h-1.5 [&>span_span]:bg-resotravo-blue [&>span_span]:shadow-md [&>span_span]:h-5 [&>span_span]:w-5 [&>span_span]:top-[-6px]"
+                className="w-full [&>span]:bg-resotravo-blue [&>span]:h-2 [&>span_span]:bg-resotravo-blue [&>span_span]:shadow-md [&>span_span]:h-6 [&>span_span]:w-6 [&>span_span]:border [&>span_span]:border-white [&>span_span]:top-[-8px]"
               />
               <div className="flex justify-between mt-2">
                 <span className="text-xs text-gray-400">2</span>
@@ -98,12 +98,12 @@ export function RevenueSimulator() {
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 mt-4">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-resotravo-blue flex items-center justify-center">
-                    <Target className="w-5 h-5 text-white" />
+                  <div className="w-12 h-12 rounded-lg bg-resotravo-blue flex items-center justify-center">
+                    <Target className="w-6 h-6 text-white" />
                   </div>
                   <div>
                     <label htmlFor="projects" className="block font-medium text-gray-800">
-                      Objectif
+                      OBJECTIF
                     </label>
                     <span className="text-sm text-gray-500">
                       Projets par mois
@@ -128,7 +128,7 @@ export function RevenueSimulator() {
                 step={1} 
                 value={[projectsPerMonth]} 
                 onValueChange={(value) => setProjectsPerMonth(value[0])}
-                className="w-full [&>span]:bg-resotravo-blue [&>span]:h-1.5 [&>span_span]:bg-resotravo-blue [&>span_span]:shadow-md [&>span_span]:h-5 [&>span_span]:w-5 [&>span_span]:top-[-6px]"
+                className="w-full [&>span]:bg-resotravo-blue [&>span]:h-2 [&>span_span]:bg-resotravo-blue [&>span_span]:shadow-md [&>span_span]:h-6 [&>span_span]:w-6 [&>span_span]:border [&>span_span]:border-white [&>span_span]:top-[-8px]"
               />
               <div className="flex justify-between mt-2">
                 <span className="text-xs text-gray-400">1</span>
