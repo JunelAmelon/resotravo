@@ -72,11 +72,11 @@ export default function Home() {
                   <div className="flex items-baseline gap-3">
                     <div className="flex flex-col items-start">
                       <span className="text-5xl sm:text-6xl font-koulen text-resotravo-orange">149.90€</span>
-                      <span className="text-xs text-gray-500 font-medium -mt-1">HT</span>
+                      <span className="text-sm text-gray-700 font-medium -mt-1">HT/mois</span>
                     </div>
                     <div className="flex flex-col items-start">
                       <span className="text-lg text-gray-500 line-through">199.90€</span>
-                      <span className="text-xs text-gray-500 -mt-1">HT</span>
+                      <span className="text-xs text-gray-500 -mt-1">HT/mois</span>
                     </div>
                   </div>
                 </div>
@@ -139,7 +139,15 @@ export default function Home() {
                 </div>
                 
                 {/* Badge overlay */}
-                <div className="absolute -bottom-4 -right-4 md:right-5 bg-resotravo-orange text-white font-koulen text-xl py-3 px-6 rounded-full shadow-xl transform rotate-3 z-10 hover:scale-110 transition-all duration-300">
+                <div 
+                  onClick={() => {
+                    const signupSection = document.getElementById('signup');
+                    if (signupSection) {
+                      signupSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="absolute -bottom-4 -right-4 md:right-5 bg-resotravo-orange text-white font-koulen text-xl py-3 px-6 rounded-full shadow-xl transform rotate-3 z-10 hover:scale-110 transition-all duration-300 cursor-pointer"
+                >
                   DÉBUTEZ MAINTENANT
                 </div>
               </div>
