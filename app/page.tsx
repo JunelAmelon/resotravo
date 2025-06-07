@@ -177,7 +177,7 @@ export default function Home() {
             </div>
             <h3 className="font-koulen text-2xl mb-4 text-resotravo-blue">On Vous Forme</h3>
             <p className="text-gray-600">
-              Accedez a une <span className="font-semibold">formation complète</span> et des ressources professionnelles pour réussir.
+              Accédez a une <span className="font-semibold">formation complète</span> et des ressources professionnelles pour réussir.
             </p>
           </div>
           
