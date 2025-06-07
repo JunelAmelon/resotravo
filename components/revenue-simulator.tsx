@@ -61,10 +61,10 @@ export function RevenueSimulator() {
                   </div>
                   <div>
                     <label htmlFor="implication" className="block font-medium text-gray-800">
-                      NIVEAU D&apos;IMPLICATION
+                      TEMPS CONSACRÉ
                     </label>
                     <span className="text-sm text-gray-500">
-                      Temps consacré à l&apos;activité
+                      Heures par semaine sur la plateforme
                     </span>
                   </div>
                 </div>
@@ -136,31 +136,7 @@ export function RevenueSimulator() {
               </div>
             </div>
             
-            {/* Abonnement mensuel */}
-            <div className="bg-gray-50 p-6 rounded-xl border border-gray-100">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-resotravo-orange flex items-center justify-center">
-                    <TrendingUp className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="font-medium text-gray-800">ABONNEMENT</h4>
-                    <span className="text-sm text-gray-500">Démarrant en octobre 2025</span>
-                  </div>
-                </div>
-                <div className="bg-white py-1.5 px-4 rounded-lg border border-gray-200 shadow-sm">
-                  <span className="font-koulen text-lg text-resotravo-orange">{monthlySubscription}€</span>
-                  <span className="text-xs text-gray-400">/mois</span>
-                </div>
-              </div>
 
-              <div className="text-right text-sm mt-4">
-                <span className="text-gray-500">Total annuel: <span className="font-medium">{yearlySubscription}€</span></span>
-              </div>
-              <div className="mt-2 bg-blue-50 p-3 rounded-lg border border-blue-100 text-sm">
-                <p className="text-blue-800">Abonnement mensuel démarrant en octobre 2025.<br/>Prix HT avec engagement annuel.</p>
-              </div>
-            </div>
           </div>
           
           {/* Colonne des résultats */}
@@ -197,47 +173,28 @@ export function RevenueSimulator() {
                   <div className="flex items-center gap-2 mt-2 bg-white/15 p-2 rounded-lg">
                     <Check className="w-4 h-4 text-green-300" /> 
                     <span className="text-sm">
-                      <span className="font-medium">{Math.round(estimatedMonthlyRevenue / implicationLevel)}€</span> par niveau d&apos;implication
+                      <span className="font-medium">{Math.round(estimatedMonthlyRevenue / projectsPerMonth)}€</span> par projet en moyenne
                     </span>
                   </div>
                 </div>
 
-                {/* ROI */}
-                <div className="bg-white/10 rounded-xl p-6 border border-white/20">
-                  <div className="flex items-center gap-2 mb-3">
-                    <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
-                      <Award className="w-4 h-4" />
-                    </div>
-                    <p className="text-white/80 font-medium">RETOUR SUR INVESTISSEMENT</p>
-                  </div>
-                  
-                  <div className="flex items-baseline gap-4 justify-center">
-                    <div className="text-center">
-                      <span className="text-3xl font-koulen text-white">{monthlyROI}%</span>
-                      <p className="text-white/60 text-xs">ROI</p>
-                    </div>
-                    <div className="text-center">
-                      <span className="text-3xl font-koulen text-white">x{Math.round(estimatedMonthlyRevenue/monthlySubscription)}</span>
-                      <p className="text-white/60 text-xs">Multiplicateur</p>
-                    </div>
-                  </div>
-                </div>
+
                 
                 {/* Facteurs de succès */}
                 <div className="mt-auto">
-                  <h4 className="text-white/90 text-lg mb-2">Facteurs de succès:</h4>
+                  <h4 className="text-white/90 text-lg mb-2">Comment ça marche:</h4>
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-white/70">Plus vous vous impliquez, plus vos commissions augmentent</span>
+                      <span className="text-white/70">Plus vous investissez de temps, plus vous pouvez gérer de projets</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-white/70">Abonnement ajusté selon votre niveau d&apos;activité</span>
+                      <span className="text-white/70">Commission moyenne de {baseCommission}€ par projet réalisé</span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-white/70">Formation et accompagnement pour maximiser vos résultats</span>
+                      <span className="text-white/70">Formation et accompagnement inclus pour développer votre activité</span>
                     </li>
                   </ul>
                 </div>
