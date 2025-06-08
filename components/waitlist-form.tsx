@@ -36,14 +36,25 @@ export function WaitlistForm({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
     }
 
     try {
-      // Ici, nous simulons l'envoi du formulaire
-      // Dans une vraie application, vous appelleriez votre API
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Envoyer les données du formulaire à notre API
+      const response = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState),
+      });
       
-      // Simuler un succès
+      const data = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(data.error || "Une erreur est survenue lors de l'envoi du formulaire.");
+      }
+      
+      // Succès
       setIsSubmitted(true);
       
-      // Après 3 secondes, fermer le modal
+      // Après 3 secondes, fermer le modal et réinitialiser le formulaire
       setTimeout(() => {
         setIsOpen(false);
         setIsSubmitted(false);
@@ -56,7 +67,7 @@ export function WaitlistForm({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
       }, 3000);
       
     } catch (err) {
-      setError("Une erreur est survenue. Veuillez réessayer.");
+      setError(err instanceof Error ? err.message : "Une erreur est survenue. Veuillez réessayer.");
     } finally {
       setIsSubmitting(false);
     }
@@ -190,7 +201,7 @@ export function WaitlistForm({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
             </div>
             <h3 className="text-2xl font-koulen text-gray-800 mb-2">Inscription réussie !</h3>
             <p className="text-gray-600">
-              Votre demande a bien été enregistrée. Vous recevrez prochainement un email avec toutes les informations pour bénéficier de votre réduction de 25%.
+              Votre demande a bien été enregistrée. Un email de confirmation vient de vous être envoyé avec toutes les informations pour bénéficier de votre réduction de 25%.
             </p>
           </div>
         )}
