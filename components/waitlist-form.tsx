@@ -37,7 +37,8 @@ export function WaitlistForm({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
 
     try {
       // Envoyer les données du formulaire à notre API
-      const response = await fetch('/api/waitlist', {
+      // Utiliser le chemin absolu pour éviter les problèmes de routing
+      const response = await fetch(window.location.origin + '/api/waitlist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -47,9 +48,21 @@ export function WaitlistForm({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
       
       // Vérifier d'abord si la réponse est OK avant de tenter de parser le JSON
       if (!response.ok) {
-        const errorText = await response.text();
-        console.error("Erreur API:", errorText);
-        throw new Error("Une erreur serveur s'est produite. Veuillez réessayer plus tard.");
+        const errorData = await response.text();
+        let errorMessage = "Une erreur serveur s'est produite. Veuillez réessayer plus tard.";
+        
+        // Essayer de parser le message d'erreur JSON si disponible
+        try {
+          const jsonError = JSON.parse(errorData);
+          if (jsonError.error) {
+            errorMessage = jsonError.error;
+          }
+        } catch (parseError) {
+          console.error("Impossible de parser la réponse d'erreur:", errorData);
+        }
+        
+        console.error("Erreur API:", errorData);
+        throw new Error(errorMessage);
       }
       
       // Si la réponse est OK, on peut parser le JSON
@@ -97,23 +110,25 @@ export function WaitlistForm({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
               <DialogTitle className="text-2xl font-koulen text-center text-resotravo-blue">
                 Rejoignez la liste d&apos;attente
               </DialogTitle>
-              <DialogDescription className="text-center">
-                <div className="bg-green-50 text-green-700 p-3 rounded-lg mb-4 text-sm">
-                  <p className="font-medium">En rejoignant la liste d&apos;attente, vous bénéficierez :</p>
-                  <ul className="mt-2 space-y-1 text-left">
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 mr-2 flex-shrink-0" />
-                      <span>D&apos;une réduction de 25% sur la formation</span>
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 mr-2 flex-shrink-0" />
-                      <span>D&apos;un accès prioritaire aux nouvelles fonctionnalités</span>
-                    </li>
-                    <li className="flex items-start">
-                      <Check className="h-5 w-5 mr-2 flex-shrink-0" />
-                      <span>D&apos;un accompagnement personnalisé</span>
-                    </li>
-                  </ul>
+              <DialogDescription asChild>
+                <div className="text-center">
+                  <div className="bg-green-50 text-green-700 p-3 rounded-lg mb-4 text-sm">
+                    <div className="font-medium">En rejoignant la liste d&apos;attente, vous bénéficierez :</div>
+                    <ul className="mt-2 space-y-1 text-left">
+                      <li className="flex items-start">
+                        <Check className="h-5 w-5 mr-2 flex-shrink-0" />
+                        <span>D&apos;une réduction de 25% sur la formation</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="h-5 w-5 mr-2 flex-shrink-0" />
+                        <span>D&apos;un accès prioritaire aux nouvelles fonctionnalités</span>
+                      </li>
+                      <li className="flex items-start">
+                        <Check className="h-5 w-5 mr-2 flex-shrink-0" />
+                        <span>D&apos;un accompagnement personnalisé</span>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
               </DialogDescription>
             </DialogHeader>
@@ -204,9 +219,9 @@ export function WaitlistForm({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
               <Check className="h-8 w-8 text-green-600" />
             </div>
             <h3 className="text-2xl font-koulen text-gray-800 mb-2">Inscription réussie !</h3>
-            <p className="text-gray-600">
+            <div className="text-gray-600">
               Votre demande a bien été enregistrée. Un email de confirmation vient de vous être envoyé avec toutes les informations pour bénéficier de votre réduction de 25%.
-            </p>
+            </div>
           </div>
         )}
       </DialogContent>
