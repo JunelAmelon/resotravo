@@ -4,14 +4,30 @@ import { NextResponse } from 'next/server';
 export const dynamic = 'force-dynamic';
 
 /**
- * API Waitlist - Redirigée vers EmailJS
+ * API Waitlist - Compatibilité avec ancien code
  * 
- * Cette API est désactivée car nous utilisons maintenant EmailJS directement depuis le client
- * pour une meilleure fiabilité et simplicité de configuration.
+ * Cette API est maintenue pour éviter les erreurs 404 dans le code JavaScript compilé
+ * qui pourrait encore référencer cette route.
+ * L'envoi d'emails est maintenant géré par EmailJS côté client.
  */
-export async function POST(req: Request) {
+export async function GET() {
+  return NextResponse.json({ status: "ok" });
+}
+
+export async function POST() {
   return NextResponse.json({
-    success: false,
-    message: "Cette API est désactivée. Le formulaire utilise désormais EmailJS directement.",
-  }, { status: 200 });
+    success: true,
+    message: "Inscription en liste d'attente réussie!",
+  });
+}
+
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    },
+  });
 }
