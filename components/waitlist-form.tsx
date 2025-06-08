@@ -1,10 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from '@emailjs/browser';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Check, User, Mail, Phone, MapPin, AlertCircle } from "lucide-react";
 
 export function WaitlistForm({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (open: boolean) => void }) {
+  // Référence pour le formulaire avec EmailJS
+  const formRef = useRef<HTMLFormElement>(null);
+  
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -15,6 +19,11 @@ export function WaitlistForm({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState("");
+  
+  // Configuration EmailJS avec les identifiants réels
+  const EMAILJS_SERVICE_ID = "service_hx7964n";
+  const EMAILJS_TEMPLATE_ID = "template_r6gim5o"; // Template admin liste d'attente
+  const EMAILJS_PUBLIC_KEY = "TyfUIOOjSF2kbLmzi";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormState({
@@ -36,37 +45,31 @@ export function WaitlistForm({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
     }
 
     try {
-      // Envoyer les données du formulaire à notre API
-      // Utiliser le chemin absolu pour éviter les problèmes de routing
-      const response = await fetch(window.location.origin + '/api/waitlist', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formState),
-      });
+      // Initialiser EmailJS avec votre clé publique
+      emailjs.init(EMAILJS_PUBLIC_KEY);
       
-      // Vérifier d'abord si la réponse est OK avant de tenter de parser le JSON
-      if (!response.ok) {
-        const errorData = await response.text();
-        let errorMessage = "Une erreur serveur s'est produite. Veuillez réessayer plus tard.";
-        
-        // Essayer de parser le message d'erreur JSON si disponible
-        try {
-          const jsonError = JSON.parse(errorData);
-          if (jsonError.error) {
-            errorMessage = jsonError.error;
-          }
-        } catch (parseError) {
-          console.error("Impossible de parser la réponse d'erreur:", errorData);
-        }
-        
-        console.error("Erreur API:", errorData);
-        throw new Error(errorMessage);
-      }
+      console.log('Envoi du formulaire via EmailJS');
       
-      // Si la réponse est OK, on peut parser le JSON
-      const data = await response.json();
+      // Préparer les données pour EmailJS
+      // Elles doivent correspondre aux variables dans votre modèle EmailJS
+      const templateParams = {
+        from_name: formState.name,
+        from_email: formState.email,
+        from_phone: formState.phone,
+        from_location: formState.location || 'Non spécifié',
+        to_name: 'Resotravo',
+        message: `Nouvelle inscription à la liste d'attente de ${formState.name} (${formState.email}), téléphone: ${formState.phone}, localisation: ${formState.location || 'Non spécifiée'}`,
+        date: new Date().toLocaleString('fr-FR')
+      };
+      
+      // Envoyer l'email avec EmailJS
+      const result = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        templateParams
+      );
+      
+      console.log('Email envoyé avec succès!', result.text);
       
       // Succès
       setIsSubmitted(true);
@@ -84,7 +87,8 @@ export function WaitlistForm({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
       }, 3000);
       
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Une erreur est survenue. Veuillez réessayer.");
+      console.error('Erreur lors de l\'envoi de l\'email:', err);
+      setError("Une erreur est survenue lors de l'envoi de l'email. Veuillez réessayer plus tard.");
     } finally {
       setIsSubmitting(false);
     }
@@ -132,7 +136,7 @@ export function WaitlistForm({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
                 </div>
               </DialogDescription>
             </DialogHeader>
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-1 flex items-center">
                   <User className="w-4 h-4 mr-2" /> Nom complet *
