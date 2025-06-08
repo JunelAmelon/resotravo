@@ -45,11 +45,15 @@ export function WaitlistForm({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen
         body: JSON.stringify(formState),
       });
       
-      const data = await response.json();
-      
+      // Vérifier d'abord si la réponse est OK avant de tenter de parser le JSON
       if (!response.ok) {
-        throw new Error(data.error || "Une erreur est survenue lors de l'envoi du formulaire.");
+        const errorText = await response.text();
+        console.error("Erreur API:", errorText);
+        throw new Error("Une erreur serveur s'est produite. Veuillez réessayer plus tard.");
       }
+      
+      // Si la réponse est OK, on peut parser le JSON
+      const data = await response.json();
       
       // Succès
       setIsSubmitted(true);

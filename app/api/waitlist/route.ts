@@ -16,12 +16,22 @@ export async function POST(req: Request) {
     }
 
     // Créer un transporteur pour l'envoi d'emails (à remplacer par vos propres identifiants)
+    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
+      console.error("Variables d'environnement EMAIL_USER ou EMAIL_PASSWORD manquantes");
+      return NextResponse.json(
+        { error: "Configuration serveur incomplète. Veuillez contacter l'administrateur." },
+        { status: 500 }
+      );
+    }
+    
     const transporter = nodemailer.createTransport({
-      service: 'gmail', // Vous pouvez utiliser d'autres services comme 'outlook', etc.
+      service: 'gmail',
       auth: {
-        user: process.env.EMAIL_USER, // Utilisez des variables d'environnement pour les identifiants
+        user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASSWORD,
       },
+      // Désactiver la vérification du certificat SSL en développement si nécessaire
+      // tls: { rejectUnauthorized: false }
     });
 
     // Email à vous-même pour vous notifier d'une nouvelle inscription
@@ -73,20 +83,28 @@ export async function POST(req: Request) {
       `,
     };
 
-    // Envoyer les emails
-    await transporter.sendMail(mailOptions);
-    await transporter.sendMail(confirmationMail);
+    try {
+      // Envoyer les emails
+      await transporter.sendMail(mailOptions);
+      await transporter.sendMail(confirmationMail);
 
-    // Réponse de succès
-    return NextResponse.json({
-      success: true,
-      message: "Inscription réussie ! Vous recevrez bientôt un email de confirmation.",
-    });
+      // Réponse de succès
+      return NextResponse.json({
+        success: true,
+        message: "Inscription réussie ! Vous recevrez bientôt un email de confirmation.",
+      });
+    } catch (emailError) {
+      console.error("Erreur lors de l'envoi de l'email:", emailError);
+      return NextResponse.json(
+        { error: "L'inscription a été enregistrée mais l'envoi de l'email a échoué." },
+        { status: 500 }
+      );
+    }
     
   } catch (error) {
-    console.error("Erreur lors de l'envoi de l'email:", error);
+    console.error("Erreur lors du traitement de la demande:", error);
     return NextResponse.json(
-      { error: "Une erreur est survenue lors de l'envoi de l'email." },
+      { error: "Une erreur est survenue lors du traitement de votre demande." },
       { status: 500 }
     );
   }

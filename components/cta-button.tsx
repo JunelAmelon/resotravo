@@ -5,7 +5,8 @@ import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 
 type CTAButtonProps = {
-  href: string;
+  href?: string;
+  onClick?: () => void;
   children: React.ReactNode;
   variant?: "primary" | "secondary" | "outline";
   className?: string;
@@ -14,6 +15,7 @@ type CTAButtonProps = {
 
 export function CTAButton({
   href,
+  onClick,
   children,
   variant = "primary",
   className,
@@ -27,15 +29,33 @@ export function CTAButton({
     outline: "border-2 border-resotravo-orange text-resotravo-orange hover:bg-resotravo-orange/10 h-12 px-6 sm:px-8 py-2 text-sm sm:text-base",
   };
   
+  const combinedStyles = cn(
+    baseStyles,
+    variantStyles[variant],
+    withIcon && "gap-3",
+    className
+  );
+  
+  // Si nous avons un onClick mais pas de href, rendre un bouton
+  if (onClick && !href) {
+    return (
+      <button 
+        onClick={onClick}
+        className={combinedStyles}
+        type="button"
+      >
+        {children}
+        {withIcon && <ArrowRight className="w-5 h-5" />}
+      </button>
+    );
+  }
+  
+  // Autrement, rendre un lien
   return (
     <Link 
-      href={href} 
-      className={cn(
-        baseStyles,
-        variantStyles[variant],
-        withIcon && "gap-3",
-        className
-      )}
+      href={href || "#"} 
+      onClick={onClick}
+      className={combinedStyles}
     >
       {children}
       {withIcon && <ArrowRight className="w-5 h-5" />}

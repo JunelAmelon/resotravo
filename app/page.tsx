@@ -279,7 +279,7 @@ export default function Home() {
             
             <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
               <CTAButton 
-                href="#" 
+                onClick={() => setShowPaymentModal(true)}
                 variant="primary"
                 className="text-lg font-bold"
                 withIcon
@@ -288,7 +288,7 @@ export default function Home() {
               </CTAButton>
               
               <CTAButton 
-                href="#" 
+                onClick={() => setShowWaitlistForm(true)}
                 variant="outline"
                 className="text-lg font-bold"
               >
