@@ -101,57 +101,44 @@ export default function Home() {
               </div>
             </div>
             
-            {/* Right Column - Image - Takes 2/5 of space on large screens */}
-            <div className="relative lg:col-span-2 z-0 order-first lg:order-last mb-5 lg:mb-0">
-              <div className="relative w-full aspect-[4/5] max-w-[600px] mx-auto">
-                {/* Decorative elements */}
-                <div className="absolute -top-10 -left-10 w-20 h-20 rounded-full bg-resotravo-blue/10 animate-pulse z-0"></div>
-                <div className="absolute -bottom-5 -right-5 w-16 h-16 rounded-full bg-resotravo-orange/10 animate-pulse z-0"></div>
-                <div className="absolute top-1/2 -right-8 w-12 h-12 rounded-full bg-resotravo-blue/10 animate-pulse z-0"></div>
-                <div className="absolute bottom-1/4 -left-6 w-10 h-10 rounded-full bg-resotravo-orange/10 animate-pulse z-0"></div>
-                
-                {/* Main image container with 3D-like effect */}
-                <div className="relative w-full h-full rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] hover:rotate-1 transition-all duration-700 group">
-                  {/* Image */}
-                  <Image
-                    src="/herosectionimg.png"
-                    alt="Courtier en travaux RESOTRAVO"
-                    className="object-cover w-full h-full"
-                    fill
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                    priority
-                    style={{ 
-                      objectPosition: "center",
-                    }}
-                  />
-                  
-                  {/* Glass effect overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-resotravo-blue/10 via-transparent to-resotravo-orange/20 z-10 group-hover:opacity-70 transition-all duration-500"></div>
-                  
-                  {/* Top overlay shine */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-white/30 to-transparent z-10 h-1/4 group-hover:opacity-60 transition-all duration-500"></div>
-                  
-                  {/* Bottom vignette */}
-                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
-                  
-                  {/* Border effect */}
-                  <div className="absolute inset-0 border-4 border-white/20 rounded-3xl z-20"></div>
-                </div>
-                
-                {/* Badge overlay */}
-                <div 
-                  onClick={() => {
-                    const signupSection = document.getElementById('signup');
-                    if (signupSection) {
-                      signupSection.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
-                  className="absolute -bottom-4 -right-4 md:right-5 bg-resotravo-orange text-white font-koulen text-xl py-3 px-6 rounded-full shadow-xl transform rotate-3 z-10 hover:scale-110 transition-all duration-300 cursor-pointer"
-                >
-                  DÉBUTEZ MAINTENANT
-                </div>
-              </div>
-            </div>
+{/* Right Column - Image - Optimized for maximum size without breaking layout */}
+<div className="relative lg:col-span-2 z-0 order-first lg:order-last mb-5 lg:mb-0">
+  <div className="relative w-full aspect-[3/4] max-w-full mx-auto lg:max-h-[90vh]">
+    {/* Decorative elements */}
+    <div className="absolute -top-8 -left-8 w-20 h-20 rounded-full bg-resotravo-blue/10 animate-pulse z-0"></div>
+    <div className="absolute -bottom-6 -right-6 w-16 h-16 rounded-full bg-resotravo-orange/10 animate-pulse z-0"></div>
+    
+    {/* Main image container - now using max-h for control */}
+    <div className="relative w-full h-full max-h-[80vh] rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all duration-700 group">
+      {/* Image with optimized sizing */}
+      <Image
+        src="/herosectionimg.png"
+        alt="Courtier en travaux RESOTRAVO"
+        className="object-cover w-full h-full"
+        fill
+        sizes="(max-width: 768px) 100vw, 
+               (max-width: 1024px) 80vw, 
+               50vw"
+        priority
+        style={{ 
+          objectPosition: "center",
+        }}
+      />
+      
+      {/* Overlay effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-resotravo-blue/10 via-transparent to-resotravo-orange/20 z-10"></div>
+      <div className="absolute inset-0 border-4 border-white/20 rounded-3xl z-20"></div>
+    </div>
+    
+    {/* Badge overlay */}
+    <div 
+      onClick={() => document.getElementById('signup')?.scrollIntoView({ behavior: 'smooth' })}
+      className="absolute -bottom-4 -right-4 bg-resotravo-orange text-white font-koulen text-xl md:text-2xl py-3 px-6 rounded-full shadow-xl transform rotate-3 z-10 hover:scale-110 transition-all duration-300 cursor-pointer"
+    >
+      DÉBUTEZ MAINTENANT
+    </div>
+  </div>
+</div>
           </div>
         </div>
       </SectionContainer>
