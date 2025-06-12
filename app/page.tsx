@@ -52,7 +52,7 @@ export default function Home() {
                 </h1>
                 
                 <p className="text-lg sm:text-xl text-gray-700 max-w-2xl mb-8 sm:mb-10 leading-relaxed">
-                  Générez facilement un revenu complémentaire <span className="font-bold">sans diplôme ni expérience</span> avec RESOTRAVO. 
+                  Générez facilement un revenu complémentaire <span className="font-bold">sans diplôme ni expérience</span> avec RESOTRAVO. <br></br>
                   <span className="text-resotravo-blue font-semibold"> Rejoignez le premier réseau de courtage en travaux 100% digital et humain!</span>
                 </p>
 
