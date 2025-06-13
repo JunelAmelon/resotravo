@@ -93,7 +93,7 @@ export function EarlyBirdOffer() {
             <div className="relative z-10">
               <div className="text-center mb-6">
                 <h3 className="font-koulen text-2xl text-white mb-2">PAIEMENT IMMÉDIAT</h3>
-                <p className="text-white/80 mb-2">Abonnement mensuel démarrant en octobre 2025</p>
+                <p className="text-white/80 mb-2">Versement immédiat, abonnement actif dès octobre</p>
                 <p className="text-white/80 mb-6">Accès complet à tous les avantages exclusifs</p>
                 
                 <motion.div 
@@ -114,7 +114,7 @@ export function EarlyBirdOffer() {
                     Au lieu de {PRICING.regular.price.toFixed(2)}€ HT/mois
                   </p>
                   <p className="text-green-300 mt-2 text-sm">
-                    Abonnement annuel: {(PRICING.early.price * 12).toFixed(2)}€ HT
+                  Abonnement mensuel sur 12 mois
                   </p>
                 </motion.div>
                 
@@ -166,8 +166,8 @@ export function EarlyBirdOffer() {
           <div className="p-6 sm:p-8 bg-gray-800">
             <div className="text-center mb-6">
               <h3 className="font-koulen text-2xl text-white/90 mb-2">LISTE D&apos;ATTENTE</h3>
-              <p className="text-white/70 mb-2">Abonnement mensuel démarrant en octobre 2025</p>
-              <p className="text-white/70 mb-6">Réservez sans profiter des avantages exclusifs</p>
+              <p className="text-white/70 mb-2">Profitez de votre abonnement dès septembre 2025</p>
+              <p className="text-white/70 mb-6">Profitez de -25 % en réservant aujourd&apos;hui</p>
               
               <div className="rounded-xl bg-gray-700/30 p-4 mb-6 border border-gray-600/30">
                 <div className="flex items-baseline gap-2 justify-center">
@@ -183,7 +183,7 @@ export function EarlyBirdOffer() {
                   Au lieu de {PRICING.regular.price.toFixed(2)}€ HT/mois
                 </p>
                 <p className="text-green-300 mt-2 text-sm">
-                  Abonnement annuel: {(PRICING.early.price * 12).toFixed(2)}€ HT
+                Abonnement mensuel sur 12 mois
                 </p>
               </div>
               

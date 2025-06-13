@@ -1,58 +1,46 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import "@/app/efficiency-bar.css";
-import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
-import { ArrowRight, Clock, Target, TrendingUp, BarChart3, Award, Check } from "lucide-react";
+import { Clock, Target, BarChart3, Check } from "lucide-react";
 import { motion } from "framer-motion";
 
-// Valeur moyenne d'une commission par projet (base)
 const baseCommission = 1200;
 
-// Formule de calcul d'abonnement
-const baseMonthlySubscription = 149.90; // Prix mensuel de base
-
 export function RevenueSimulator() {
-  const [implicationLevel, setImplicationLevel] = useState(10); // Niveau d'implication (ex-hoursPerWeek)
+  const [implicationLevel, setImplicationLevel] = useState(10);
   const [projectsPerMonth, setProjectsPerMonth] = useState(2);
   const [animateValue, setAnimateValue] = useState(false);
-  
-  // Calcul de la commission ajustée selon le niveau d'implication
-  // Plus le niveau d'implication est élevé, plus la commission augmente
-  const adjustedCommission = baseCommission * (1 + (implicationLevel / 100));
-  
-  // Calcul des revenus estimés
-  const estimatedMonthlyRevenue = projectsPerMonth * adjustedCommission;
+
+  // Corrélation automatique entre heures et projets
+  useEffect(() => {
+    const newProjects = Math.max(1, Math.min(5, Math.round(implicationLevel / 5)));
+    setProjectsPerMonth(newProjects);
+  }, [implicationLevel]);
+
+  useEffect(() => {
+    const newHours = Math.max(5, Math.min(40, projectsPerMonth * 5));
+    setImplicationLevel(newHours);
+  }, [projectsPerMonth]);
+
+  const estimatedMonthlyRevenue = projectsPerMonth * baseCommission;
   const estimatedYearlyRevenue = estimatedMonthlyRevenue * 12;
-  
-  // Calcul du prix d'abonnement mensuel en fonction du niveau d'implication et du nombre de projets
-  // L'abonnement augmente légèrement avec l'implication et le nombre de projets
-  const monthlySubscription = Math.round(baseMonthlySubscription * (1 + (implicationLevel / 200) + (projectsPerMonth / 10)));
-  const yearlySubscription = monthlySubscription * 12;
-  
-  // Calcul du retour sur investissement (ROI)
-  const monthlyROI = Math.round((estimatedMonthlyRevenue / monthlySubscription) * 100);
-  
-  // Trigger animation when values change
+
   useEffect(() => {
     setAnimateValue(true);
     const timer = setTimeout(() => setAnimateValue(false), 600);
     return () => clearTimeout(timer);
   }, [implicationLevel, projectsPerMonth]);
-  
-  // Calculate efficiency score based on implication level
-  const efficiencyScore = Math.min(100, Math.round((implicationLevel / 40) * 100));
-  
+
   return (
     <div className="max-w-4xl mx-auto">
       <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
         <div className="grid grid-cols-1 md:grid-cols-2">
           {/* Colonne des controles */}
-          <div className="order-2 md:order-1 p-8 space-y-6">
+          <div className="p-8 space-y-6">
             <h3 className="font-koulen text-2xl text-resotravo-blue mb-6">SIMULATEUR DE REVENUS</h3>
             
-            {/* Disponibilite (heures) */}
+            {/* Temps consacré */}
             <div className="bg-gray-50 p-6 rounded-xl border border-gray-100">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
@@ -64,7 +52,7 @@ export function RevenueSimulator() {
                       TEMPS CONSACRÉ
                     </label>
                     <span className="text-sm text-gray-500">
-                      Heures par semaine sur la plateforme
+                      Heures nécessaires par semaine
                     </span>
                   </div>
                 </div>
@@ -74,28 +62,37 @@ export function RevenueSimulator() {
                     animate={animateValue ? { scale: [1, 1.1, 1] } : {}}
                     transition={{ duration: 0.3 }}
                   >
-                    {implicationLevel}/40
+                    {implicationLevel}h
                   </motion.span>
                 </div>
               </div>
               
               <Slider 
                 id="implication"
-                min={2} 
+                min={5} 
                 max={40} 
                 step={1} 
                 value={[implicationLevel]} 
                 onValueChange={(value) => setImplicationLevel(value[0])}
-                className="w-full [&>span]:bg-resotravo-blue [&>span]:h-2 [&>span_span]:bg-resotravo-blue [&>span_span]:shadow-md [&>span_span]:h-6 [&>span_span]:w-6 [&>span_span]:border [&>span_span]:border-white [&>span_span]:top-[-8px]"
+                className="w-full [&>span]:bg-resotravo-blue"
               />
-              <div className="flex justify-between mt-2">
-                <span className="text-xs text-gray-400">2</span>
-                <span className="text-xs text-gray-400">40</span>
+              <div className="flex justify-between mt-2 text-sm text-gray-500">
+                <span>5h/semaine</span>
+                <span>40h/semaine</span>
+              </div>
+              <div className="mt-3 text-sm">
+                {implicationLevel >= 30 ? (
+                  <span className="text-green-600">✓ Temps plein - Optimisation maximale</span>
+                ) : implicationLevel >= 20 ? (
+                  <span className="text-blue-600">✓ Mi-temps - Bon équilibre</span>
+                ) : (
+                  <span className="text-gray-600">✓ Activité complémentaire</span>
+                )}
               </div>
             </div>
             
-            {/* Objectif (projets) */}
-            <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 mt-4">
+            {/* Nombre de projets */}
+            <div className="bg-gray-50 p-6 rounded-xl border border-gray-100">
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 rounded-lg bg-resotravo-blue flex items-center justify-center">
@@ -103,10 +100,10 @@ export function RevenueSimulator() {
                   </div>
                   <div>
                     <label htmlFor="projects" className="block font-medium text-gray-800">
-                      OBJECTIF
+                      PROJETS MENSUELS
                     </label>
                     <span className="text-sm text-gray-500">
-                      Projets par mois
+                      Nombre de projets que vous pouvez gérer
                     </span>
                   </div>
                 </div>
@@ -128,19 +125,34 @@ export function RevenueSimulator() {
                 step={1} 
                 value={[projectsPerMonth]} 
                 onValueChange={(value) => setProjectsPerMonth(value[0])}
-                className="w-full [&>span]:bg-resotravo-blue [&>span]:h-2 [&>span_span]:bg-resotravo-blue [&>span_span]:shadow-md [&>span_span]:h-6 [&>span_span]:w-6 [&>span_span]:border [&>span_span]:border-white [&>span_span]:top-[-8px]"
+                className="w-full [&>span]:bg-resotravo-blue"
               />
-              <div className="flex justify-between mt-2">
-                <span className="text-xs text-gray-400">1</span>
-                <span className="text-xs text-gray-400">5</span>
+              <div className="flex justify-between mt-2 text-sm text-gray-500">
+                <span>1 projet</span>
+                <span>5 projets</span>
+              </div>
+              <div className="mt-3 text-sm">
+                ~{Math.round(implicationLevel / projectsPerMonth)}h par projet/semaine
               </div>
             </div>
-            
 
+            {/* Conseils */}
+            <div className="bg-blue-50 p-4 rounded-lg border border-blue-100">
+              <h4 className="font-medium text-blue-800 mb-2">Conseil :</h4>
+              <p className="text-sm text-blue-700">
+                {projectsPerMonth >= 4 ? (
+                  "Avec ce volume de projets, vous pouvez en faire votre activité principale"
+                ) : projectsPerMonth >= 2 ? (
+                  "Parfait pour compléter vos revenus de manière significative"
+                ) : (
+                  "Idéal pour commencer et prendre de l'expérience"
+                )}
+              </p>
+            </div>
           </div>
           
-          {/* Colonne des résultats */}
-          <div className="order-1 md:order-2 bg-resotravo-blue p-8 text-white">
+          {/* Colonne des résultats - Couleurs d'origine */}
+          <div className="bg-resotravo-blue p-8 text-white">
             <div className="h-full flex flex-col">
               <h3 className="font-koulen text-2xl mb-8">VOS REVENUS POTENTIELS</h3>
               
@@ -151,7 +163,7 @@ export function RevenueSimulator() {
                     <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
                       <BarChart3 className="w-4 h-4" />
                     </div>
-                    <p className="text-white/80 font-medium">REVENU MENSUEL</p>
+                    <p className="text-white/80 font-medium">REVENU MENSUEL MOYEN</p>
                   </div>
                   
                   <motion.div 
@@ -161,40 +173,51 @@ export function RevenueSimulator() {
                   >
                     <div className="flex items-baseline justify-center gap-2">
                       <span className="text-4xl font-koulen text-white">
-                        {estimatedMonthlyRevenue} €
+                        {estimatedMonthlyRevenue.toLocaleString()} €
                       </span>
-                      <span className="text-white/80 text-lg">/mois</span>
                     </div>
                     <div className="text-white/80 text-sm mt-1">
-                      {estimatedYearlyRevenue} € /an
+                      Soit {estimatedYearlyRevenue.toLocaleString()} € /an
                     </div>
                   </motion.div>
                   
-                  <div className="flex items-center gap-2 mt-2 bg-white/15 p-2 rounded-lg">
-                    <Check className="w-4 h-4 text-green-300" /> 
-                    <span className="text-sm">
-                      <span className="font-medium">{Math.round(estimatedMonthlyRevenue / projectsPerMonth)}€</span> par projet en moyenne
-                    </span>
+                  <div className="mt-4 space-y-2">
+                    <div className="flex items-center gap-2 bg-white/15 p-2 rounded-lg">
+                      <Check className="w-4 h-4 text-green-300" /> 
+                      <span className="text-sm">
+                        <span className="font-medium">{baseCommission}€</span> par projet en moyenne
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2 bg-white/15 p-2 rounded-lg">
+                      <Check className="w-4 h-4 text-green-300" /> 
+                      <span className="text-sm">
+                        <span className="font-medium">{Math.round(implicationLevel / projectsPerMonth)}h</span> nécessaires par projet/semaine
+                      </span>
+                    </div>
                   </div>
                 </div>
 
-
-                
-                {/* Facteurs de succès */}
+                {/* Détails */}
                 <div className="mt-auto">
-                  <h4 className="text-white/90 text-lg mb-2">Comment ça marche:</h4>
+                  <h4 className="text-white/90 text-lg mb-2">Comment ça marche :</h4>
                   <ul className="space-y-2">
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-white/70">Plus vous investissez de temps, plus vous pouvez gérer de projets</span>
+                      <span className="text-white/70">
+                        Chaque projet nécessite environ 5h/semaine
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-white/70">Commission moyenne de {baseCommission}€ par projet réalisé</span>
+                      <span className="text-white/70">
+                        Commission moyenne de {baseCommission}€ par projet
+                      </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                      <span className="text-white/70">Formation et accompagnement inclus pour développer votre activité</span>
+                      <span className="text-white/70">
+                        Les heures et projets sont automatiquement synchronisés
+                      </span>
                     </li>
                   </ul>
                 </div>
