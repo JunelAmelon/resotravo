@@ -180,7 +180,7 @@ export function EarlyBirdOffer() {
                   </div>
                 </div>
                 <p className="text-white/70 line-through mt-2">
-                  Au lieu de {PRICING.regular.price.toFixed(2)}€ HT/mois
+                  Au lieu de {PRICING.regular.price.toFixed(0)}€ HT/mois
                 </p>
                 <p className="text-green-300 mt-2 text-sm">
                 Abonnement mensuel sur 12 mois
