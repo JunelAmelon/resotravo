@@ -103,7 +103,7 @@ export function EarlyBirdOffer() {
                 >
                   <div className="flex items-baseline gap-2 justify-center">
                     <span className="font-koulen text-4xl sm:text-5xl text-white">
-                      {PRICING.early.price.toFixed(2)}€
+                    149€
                     </span>
                     <div className="flex flex-col items-start">
                       <span className="text-white/80 font-medium text-lg">HT/mois</span>
@@ -180,7 +180,7 @@ export function EarlyBirdOffer() {
                   </div>
                 </div>
                 <p className="text-white/70 line-through mt-2">
-                  Au lieu de 149€ HT/mois
+                  Au lieu de {PRICING.regular.price.toFixed(0)}€ HT/mois
                 </p>
                 <p className="text-green-300 mt-2 text-sm">
                 Abonnement mensuel sur 12 mois
