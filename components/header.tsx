@@ -38,7 +38,7 @@ export function Header() {
         <div className="container mx-auto flex items-center justify-between h-16 sm:h-20 px-4">
           <Link href="/" className="flex items-center">
             <Image 
-              src="/logo couleur texteblanc.svg" 
+              src="/logo couleur textenoir.svg" 
               alt="RESOTRAVO Logo" 
               width={150}
               height={40}

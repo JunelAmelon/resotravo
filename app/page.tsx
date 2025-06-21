@@ -71,7 +71,7 @@ export default function Home() {
                   <p className="text-gray-500 text-sm font-medium mb-1">TARIF EXCEPTIONNEL</p>
                   <div className="flex items-baseline gap-3">
                     <div className="flex flex-col items-start">
-                      <span className="text-5xl sm:text-6xl font-koulen text-resotravo-orange">149.90€</span>
+                      <span className="text-5xl sm:text-6xl font-koulen text-resotravo-orange">149€</span>
                       <span className="text-sm text-gray-700 font-medium -mt-1">HT/mois</span>
                     </div>
                     <div className="flex flex-col items-start">

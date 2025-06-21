@@ -4,7 +4,7 @@ export const PRICING = {
     currency: "EUR",
   },
   early: {
-    price: 149.90,
+    price: 149,
     currency: "EUR",
   },
 };
