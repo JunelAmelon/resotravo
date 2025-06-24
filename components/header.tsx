@@ -21,8 +21,8 @@ export function Header() {
   }, []);
 
   const menuItems = [
-    { href: "#why", label: "Pourquoi" },
-    { href: "#how", label: "Comment" },
+    { href: "#why", label: "Pourquoi ?" },
+    { href: "#how", label: "Comment ?" },
     { href: "#simulator", label: "Simulateur" },
     { href: "#faq", label: "FAQ" },
   ];

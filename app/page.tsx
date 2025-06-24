@@ -25,10 +25,10 @@ export default function Home() {
     <>
       <NotificationPopup />
       <Header />
-      
+
       {/* SECTION 1 - HERO */}
-      <SectionContainer 
-        id="hero" 
+      <SectionContainer
+        id="hero"
         background="white"
         className="min-h-[90vh] sm:min-h-screen flex items-center justify-center overflow-hidden relative pt-20 pb-12 md:py-0 bg-white"
       >
@@ -44,13 +44,13 @@ export default function Home() {
                   <span className="w-2 h-2 bg-resotravo-orange rounded-full mr-2"></span>
                   Offre limitée aux 50 premiers inscrits
                 </span>
-                
+
                 <h1 className="font-koulen text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl leading-[1] tracking-tight mb-6 sm:mb-8">
-                  <span className="text-resotravo-blue">Devenez</span><br/>
-                  <span className="text-resotravo-orange">courtier en</span><br/>
+                  <span className="text-resotravo-blue">Devenez</span><br />
+                  <span className="text-resotravo-orange">courtier en</span><br />
                   <span className="text-resotravo-blue">travaux!</span>
                 </h1>
-                
+
                 <p className="text-lg sm:text-xl text-gray-700 max-w-2xl mb-8 sm:mb-10 leading-relaxed">
                   Générez facilement un revenu complémentaire <span className="font-bold">sans diplôme ni expérience</span> avec <span className="text-resotravo-blue font-bold">RESO</span><span className="text-resotravo-orange font-bold">TRAVO</span>. <br></br>
                   <span className="text-resotravo-blue font-semibold"> Rejoignez le premier réseau de courtage en travaux 100% digital et humain!</span>
@@ -65,7 +65,7 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              
+
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10">
                 <div className="bg-white/70 backdrop-blur-sm py-3 px-5 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
                   <p className="text-gray-500 text-sm font-medium mb-1">TARIF EXCEPTIONNEL</p>
@@ -80,17 +80,17 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                
+
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button 
+                  <button
                     onClick={() => setShowPaymentModal(true)}
                     className="text-lg font-bold py-4 px-8 shadow-2xl relative overflow-hidden transition-all duration-500 transform hover:scale-105 hover:shadow-resotravo-orange/30 hover:shadow-xl bg-resotravo-blue text-white rounded-full inline-flex items-center gap-2"
                   >
                     Je paie maintenant
                     <CreditCard className="w-5 h-5" />
                   </button>
-                  
-                  <button 
+
+                  <button
                     onClick={() => setShowWaitlistForm(true)}
                     className="text-lg font-bold py-4 px-8 shadow-2xl relative overflow-hidden transition-all duration-500 transform hover:scale-105 hover:shadow-resotravo-orange/30 hover:shadow-xl bg-white border border-resotravo-blue text-resotravo-blue rounded-full inline-flex items-center gap-2"
                   >
@@ -100,49 +100,47 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            
-{/* Right Column - Image - Optimized for maximum size without breaking layout */}
-<div className="relative lg:col-span-2 z-0 order-first lg:order-last mb-5 lg:mb-0">
-  <div className="relative w-full aspect-[3/4] max-w-full mx-auto lg:max-h-[90vh]">
-    {/* Decorative elements */}
-    <div className="absolute -top-8 -left-8 w-20 h-20 rounded-full bg-resotravo-blue/10 animate-pulse z-0"></div>
-    <div className="absolute -bottom-6 -right-6 w-16 h-16 rounded-full bg-resotravo-orange/10 animate-pulse z-0"></div>
-    
-    {/* Main image container - now using max-h for control */}
-    <div className="relative w-full h-full max-h-[80vh] rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all duration-700 group">
-      {/* Image with optimized sizing */}
-      <Image
-        src="/herosectionimg.png"
-        alt="Courtier en travaux RESOTRAVO"
-        className="object-cover w-full h-full"
-        fill
-        sizes="(max-width: 768px) 100vw, 
-               (max-width: 1024px) 80vw, 
+
+            {/* Right Column - Image - Optimized for maximum size without breaking layout */}
+            <div className="relative lg:col-span-2 z-0 order-first lg:order-last mb-5 lg:mb-0 mt-0 md:mt-24 lg:mt-0">
+              <div className="relative w-full aspect-[3/4] max-w-full mx-auto lg:max-h-[90vh]">
+                {/* Decorative elements */}
+                <div className="absolute -top-8 -left-8 w-20 h-20 rounded-full bg-resotravo-blue/10 animate-pulse z-0"></div>
+                <div className="absolute -bottom-6 -right-6 w-16 h-16 rounded-full bg-resotravo-orange/10 animate-pulse z-0"></div>
+
+                {/* Main image container - now using max-h for control */}
+                <div className="relative w-full h-full max-h-[80vh] rounded-3xl overflow-hidden shadow-2xl transform hover:scale-[1.02] transition-all duration-700 group">
+                  {/* Image with optimized sizing */}
+                  <Image
+                    src="/herosectionimg.png"
+                    alt="Courtier en travaux RESOTRAVO"
+                    className="object-contain absolute inset-0 w-full h-full rounded-[3rem]"
+                    fill
+                    sizes="(max-width: 768px) 100vw,
+               (max-width: 1024px) 80vw,
                50vw"
-        priority
-        style={{ 
-          objectPosition: "center",
-        }}
-      />
-      
-      {/* Overlay effects */}
-      <div className="absolute inset-0 bg-gradient-to-br from-resotravo-blue/10 via-transparent to-resotravo-orange/20 z-10"></div>
-      <div className="absolute inset-0 border-4 border-white/20 rounded-3xl z-20"></div>
-    </div>
-    
-    {/* Badge overlay */}
-    <div 
-      onClick={() => document.getElementById('signup')?.scrollIntoView({ behavior: 'smooth' })}
-      className="absolute -bottom-4 -right-4 bg-resotravo-orange text-white font-koulen text-xl md:text-2xl py-3 px-6 rounded-full shadow-xl transform rotate-3 z-10 hover:scale-110 transition-all duration-300 cursor-pointer"
-    >
-      DÉBUTEZ MAINTENANT
-    </div>
-  </div>
-</div>
+                    priority
+                    style={{ zIndex: 0 }}
+                  />
+
+                  {/* Overlay effects */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-resotravo-blue/10 via-transparent to-resotravo-orange/20 z-10"></div>
+                  <div className="absolute inset-0 border-4 border-white/20 rounded-3xl z-20"></div>
+                </div>
+
+                {/* Badge overlay */}
+                <div
+                  onClick={() => document.getElementById('signup')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="absolute -bottom-4 -right-4 md:bottom-0 md:right-0 bg-resotravo-orange text-white font-koulen text-xl md:text-2xl py-3 px-6 rounded-full shadow-xl transform rotate-3 z-10 hover:scale-110 transition-all duration-300 cursor-pointer"
+                >
+                  DÉBUTEZ MAINTENANT
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </SectionContainer>
-      
+
       {/* SECTION 2 - WHY */}
       <SectionContainer id="why" background="white">
         <div className="max-w-4xl mx-auto text-center mb-16">
@@ -150,15 +148,15 @@ export default function Home() {
             <span className="block text-resotravo-blue">Un moyen simple</span>
             <span className="block text-resotravo-orange">et moderne de RÉUSSIR</span>
           </h2>
-          
+
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Rejoignez <span className="font-bold text-resotravo-blue">RESOTRAVO</span>, le premier réseau de courtage en travaux nouvelle génération, 
+            Rejoignez <span className="font-bold text-resotravo-blue">RESOTRAVO</span>, le premier réseau de courtage en travaux nouvelle génération,
             <span className="font-bold"> 100% digital, 100% humain.</span>
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
-          <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 transform hover:scale-105 transition-transform duration-300">
+          <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 transform hover:scale-105 transition-transform duration-300 flex flex-col items-center text-center md:items-start md:text-left">
             <div className="w-16 h-16 bg-resotravo-blue rounded-xl flex items-center justify-center mb-6 text-white transform -rotate-6">
               <GraduationCap className="w-8 h-8" />
             </div>
@@ -167,8 +165,8 @@ export default function Home() {
               Accédez à une <span className="font-semibold">formation complète</span> et des ressources professionnelles pour réussir.
             </p>
           </div>
-          
-          <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 transform hover:scale-105 transition-transform duration-300">
+
+          <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 transform hover:scale-105 transition-transform duration-300 flex flex-col items-center text-center md:items-start md:text-left">
             <div className="w-16 h-16 bg-resotravo-orange rounded-xl flex items-center justify-center mb-6 text-white transform -rotate-6">
               <Laptop className="w-8 h-8" />
             </div>
@@ -177,8 +175,8 @@ export default function Home() {
               Tous les <span className="font-semibold">outils nécessaires</span> pour réussir dans le courtage en travaux.
             </p>
           </div>
-          
-          <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 transform hover:scale-105 transition-transform duration-300">
+
+          <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 transform hover:scale-105 transition-transform duration-300 flex flex-col items-center text-center md:items-start md:text-left">
             <div className="w-16 h-16 bg-resotravo-blue rounded-xl flex items-center justify-center mb-6 text-white transform -rotate-6">
               <Shield className="w-8 h-8" />
             </div>
@@ -191,7 +189,7 @@ export default function Home() {
           </div>
         </div>
       </SectionContainer>
-      
+
       {/* SECTION 3 - OFFRE LIMITEE */}
       <SectionContainer id="offer" background="dark" className="offer-section">
         <div className="relative z-10">
@@ -202,13 +200,13 @@ export default function Home() {
             </h2>
           </div>
           <EarlyBirdOffer />
-      
-      {/* Modaux pour les appels à l'action de la page d'accueil */}
-      <WaitlistForm isOpen={showWaitlistForm} setIsOpen={setShowWaitlistForm} />
-      <PaymentModal isOpen={showPaymentModal} setIsOpen={setShowPaymentModal} />
+
+          {/* Modaux pour les appels à l'action de la page d'accueil */}
+          <WaitlistForm isOpen={showWaitlistForm} setIsOpen={setShowWaitlistForm} />
+          <PaymentModal isOpen={showPaymentModal} setIsOpen={setShowPaymentModal} />
         </div>
       </SectionContainer>
-      
+
       {/* SECTION 4 - SIMULATEUR */}
       <SectionContainer id="simulator" background="white">
         <div className="text-center mb-8 sm:mb-12">
@@ -222,7 +220,7 @@ export default function Home() {
         </div>
         <RevenueSimulator />
       </SectionContainer>
-      
+
       {/* SECTION 5 - COMMENT CA MARCHE */}
       <SectionContainer id="how" background="dark" className="how-section">
         <div className="relative z-10">
@@ -235,7 +233,7 @@ export default function Home() {
           <HowItWorks />
         </div>
       </SectionContainer>
-      
+
       {/* SECTION 6 - POURQUOI CA FONCTIONNE */}
       <SectionContainer id="why-works" background="white">
         <div className="text-center mb-8 sm:mb-12">
@@ -246,7 +244,7 @@ export default function Home() {
         </div>
         <WhyItWorks />
       </SectionContainer>
-      
+
       {/* SECTION 7 - APPEL FINAL */}
       <SectionContainer id="signup" background="dark" className="signup-section">
         <div className="relative z-10">
@@ -255,7 +253,7 @@ export default function Home() {
               <span className="text-white">Ils sont DÉJÀ </span>
               <span className="text-resotravo-orange">en formation</span>
             </h2>
-            
+
             <p className="text-lg sm:text-xl mb-8 sm:mb-12 text-gray-300">
               Rejoignez la nouvelle génération de courtiers en travaux.
               <br />
@@ -263,9 +261,9 @@ export default function Home() {
                 C&apos;est le moment de changer de vie.
               </span>
             </p>
-            
+
             <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
-              <CTAButton 
+              <CTAButton
                 onClick={() => setShowPaymentModal(true)}
                 variant="primary"
                 className="text-lg font-bold"
@@ -273,8 +271,8 @@ export default function Home() {
               >
                 Je passe à l&apos;action maintenant
               </CTAButton>
-              
-              <CTAButton 
+
+              <CTAButton
                 onClick={() => setShowWaitlistForm(true)}
                 variant="outline"
                 className="text-lg font-bold"
@@ -285,7 +283,7 @@ export default function Home() {
           </div>
         </div>
       </SectionContainer>
-      
+
       {/* SECTION 8 - FAQ */}
       <SectionContainer id="faq" background="white">
         <div className="text-center mb-8 sm:mb-12">
@@ -296,7 +294,7 @@ export default function Home() {
         </div>
         <FAQAccordion />
       </SectionContainer>
-      
+
       <Footer />
     </>
   );
