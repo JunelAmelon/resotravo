@@ -27,11 +27,11 @@ export function HowItWorks() {
 
   return (
     <div className="max-w-6xl mx-auto">
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {steps.map((step, index) => (
           <div 
             key={index}
-            className="bg-white/95 backdrop-blur-xl rounded-2xl p-8 transform hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center md:items-start md:text-left"
+            className="bg-white/95 backdrop-blur-xl rounded-2xl p-8 transform hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center"
           >
             <div className={`w-16 h-16 ${step.color} rounded-xl flex items-center justify-center text-white mb-6`}>
               {step.icon}

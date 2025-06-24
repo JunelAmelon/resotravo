@@ -156,7 +156,7 @@ export default function Home() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto mb-16">
-          <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 transform hover:scale-105 transition-transform duration-300 flex flex-col items-center text-center md:items-start md:text-left">
+          <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 transform hover:scale-105 transition-transform duration-300 flex flex-col items-center text-center">
             <div className="w-16 h-16 bg-resotravo-blue rounded-xl flex items-center justify-center mb-6 text-white transform -rotate-6">
               <GraduationCap className="w-8 h-8" />
             </div>
@@ -166,7 +166,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 transform hover:scale-105 transition-transform duration-300 flex flex-col items-center text-center md:items-start md:text-left">
+          <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 transform hover:scale-105 transition-transform duration-300 flex flex-col items-center text-center">
             <div className="w-16 h-16 bg-resotravo-orange rounded-xl flex items-center justify-center mb-6 text-white transform -rotate-6">
               <Laptop className="w-8 h-8" />
             </div>
@@ -176,7 +176,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 transform hover:scale-105 transition-transform duration-300 flex flex-col items-center text-center md:items-start md:text-left">
+          <div className="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 transform hover:scale-105 transition-transform duration-300 flex flex-col items-center text-center">
             <div className="w-16 h-16 bg-resotravo-blue rounded-xl flex items-center justify-center mb-6 text-white transform -rotate-6">
               <Shield className="w-8 h-8" />
             </div>
