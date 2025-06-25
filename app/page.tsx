@@ -75,7 +75,7 @@ export default function Home() {
                       <span className="text-sm text-gray-700 font-medium -mt-1">HT/mois</span>
                     </div>
                     <div className="flex flex-col items-start">
-                      <span className="text-lg text-gray-500 line-through">199.90€</span>
+                      <span className="text-lg text-gray-500 line-through">199€</span>
                       <span className="text-xs text-gray-500 -mt-1">HT/mois</span>
                     </div>
                   </div>
