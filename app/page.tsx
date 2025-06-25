@@ -69,14 +69,14 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10">
   <div className="bg-white/70 backdrop-blur-sm py-3 px-5 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
     <p className="text-gray-500 text-sm font-medium mb-1">TARIF EXCEPTIONNEL</p>
-    <div className="flex items-baseline gap-3">
+    <div className="flex items-end gap-3">
       <div className="flex flex-col">
-        <span className="text-5xl sm:text-6xl font-koulen text-resotravo-orange">149€</span>
-        <span className="text-sm text-gray-700 font-medium">HT/mois</span>
+        <span className="text-5xl sm:text-6xl font-koulen text-resotravo-orange leading-tight">149€</span>
+        <span className="text-sm text-gray-700 font-medium mt-1">HT/mois</span>
       </div>
       <div className="flex flex-col">
         <span className="text-lg text-gray-500 line-through">199€</span>
-        <span className="text-xs text-gray-500">HT/mois</span>
+        <span className="text-xs text-gray-500 mt-1">HT/mois</span>
       </div>
     </div>
   </div>
