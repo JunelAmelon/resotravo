@@ -67,38 +67,38 @@ export default function Home() {
               </div>
 
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 sm:gap-10">
-                <div className="bg-white/70 backdrop-blur-sm py-3 px-5 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
-                  <p className="text-gray-500 text-sm font-medium mb-1">TARIF EXCEPTIONNEL</p>
-                  <div className="flex items-baseline gap-3">
-                    <div className="flex flex-col items-start">
-                      <span className="text-5xl sm:text-6xl font-koulen text-resotravo-orange">149€</span>
-                      <span className="text-sm text-gray-700 font-medium -mt-1">HT/mois</span>
-                    </div>
-                    <div className="flex flex-col items-start">
-                      <span className="text-lg text-gray-500 line-through">199€</span>
-                      <span className="text-xs text-gray-500 -mt-1">HT/mois</span>
-                    </div>
-                  </div>
-                </div>
+  <div className="bg-white/70 backdrop-blur-sm py-3 px-5 rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300">
+    <p className="text-gray-500 text-sm font-medium mb-1">TARIF EXCEPTIONNEL</p>
+    <div className="flex items-baseline gap-3">
+      <div className="flex flex-col">
+        <span className="text-5xl sm:text-6xl font-koulen text-resotravo-orange">149€</span>
+        <span className="text-sm text-gray-700 font-medium">HT/mois</span>
+      </div>
+      <div className="flex flex-col">
+        <span className="text-lg text-gray-500 line-through">199€</span>
+        <span className="text-xs text-gray-500">HT/mois</span>
+      </div>
+    </div>
+  </div>
 
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button
-                    onClick={() => setShowPaymentModal(true)}
-                    className="text-lg font-bold py-4 px-8 shadow-2xl relative overflow-hidden transition-all duration-500 transform hover:scale-105 hover:shadow-resotravo-orange/30 hover:shadow-xl bg-resotravo-blue text-white rounded-full inline-flex items-center gap-2"
-                  >
-                    Je paie maintenant
-                    <CreditCard className="w-5 h-5" />
-                  </button>
+  <div className="flex flex-col sm:flex-row gap-4">
+    <button
+      onClick={() => setShowPaymentModal(true)}
+      className="text-lg font-bold py-4 px-8 shadow-2xl relative overflow-hidden transition-all duration-500 transform hover:scale-105 hover:shadow-resotravo-orange/30 hover:shadow-xl bg-resotravo-blue text-white rounded-full inline-flex items-center gap-2"
+    >
+      Je paie maintenant
+      <CreditCard className="w-5 h-5" />
+    </button>
 
-                  <button
-                    onClick={() => setShowWaitlistForm(true)}
-                    className="text-lg font-bold py-4 px-8 shadow-2xl relative overflow-hidden transition-all duration-500 transform hover:scale-105 hover:shadow-resotravo-orange/30 hover:shadow-xl bg-white border border-resotravo-blue text-resotravo-blue rounded-full inline-flex items-center gap-2"
-                  >
-                    Liste d&apos;attente
-                    <ChevronRight className="w-5 h-5" />
-                  </button>
-                </div>
-              </div>
+    <button
+      onClick={() => setShowWaitlistForm(true)}
+      className="text-lg font-bold py-4 px-8 shadow-2xl relative overflow-hidden transition-all duration-500 transform hover:scale-105 hover:shadow-resotravo-orange/30 hover:shadow-xl bg-white border border-resotravo-blue text-resotravo-blue rounded-full inline-flex items-center gap-2"
+    >
+      Liste d&apos;attente
+      <ChevronRight className="w-5 h-5" />
+    </button>
+  </div>
+</div>
             </div>
 
             {/* Right Column - Image - Optimized for maximum size without breaking layout */}
