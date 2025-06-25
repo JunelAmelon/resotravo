@@ -17,7 +17,7 @@ export const NOTIFICATIONS = [
   { name: "Inès", city: "Aix-en-Provence" },
   { name: "Mathis", city: "Angers" },
   { name: "Sarah", city: "Reims" },
-  { name: "Julien", city: "Dakar" },
+  { name: "Julien", city: "Paris" },
   { name: "Marie", city: "Bruxelles" },
   { name: "Antoine", city: "Genève" },
   { name: "Zoé", city: "Montréal" },
