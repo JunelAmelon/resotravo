@@ -24,9 +24,9 @@ export default function MentionsLegales() {
               <p>
                 <strong>RESOTRAVO</strong><br />
                 Forme juridique: SAS<br />
-                Capital social: 10 000€<br />
-                Siège social: 12 rue de la République, 75001 Paris<br />
-                SIRET: XXX XXX XXX XXXXX<br />
+                Capital social: 500 €<br />
+                Siège social: 3466 Avenue de Toulouse 33140 Cadaujac<br />
+                SIRET: 931 750 483 R.C.S. Bordeaux<br />
                 Directeur de la publication: Junel BOKO ASSOBA
               </p>
             </div>
