@@ -56,7 +56,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
-                  href="mailto:contact@resotravo.fr"
+                  href="mailto:contact@resotravo.com"
                   className="hover:text-resotravo-orange transition-colors"
                 >
                   contact@resotravo.com
