@@ -59,7 +59,7 @@ export function Footer() {
                   href="mailto:contact@resotravo.fr"
                   className="hover:text-resotravo-orange transition-colors"
                 >
-                  contact@resotravo.fr
+                  contact@resotravo.com
                 </Link>
               </li>
               <li>
