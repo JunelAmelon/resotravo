@@ -9,7 +9,7 @@ const PRICE = 149.90;
 export function PaymentModal({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (open: boolean) => void }) {
   const redirectToCitelis = async () => {
     try {
-      const res = await fetch("/api/payment");
+      const res = await fetch("/api/payment/payment");
       const data = await res.json();
   
       if (data.redirectUrl) {
