@@ -9,20 +9,20 @@ const PRICE = 149.90;
 export function PaymentModal({ isOpen, setIsOpen }: { isOpen: boolean, setIsOpen: (open: boolean) => void }) {
   const redirectToCitelis = async () => {
     try {
-      const res = await fetch("https://payment.resotravo.com/index.php");
+      const res = await fetch("/api/payment");
       const data = await res.json();
-
+  
       if (data.redirectUrl) {
         window.location.href = data.redirectUrl;
       } else {
-        alert("Erreur lors de la redirection vers Citelis.");
-        console.error(data);
+        alert("Erreur de redirection.");
       }
     } catch (error) {
-      console.error("Erreur API Citelis:", error);
-      alert("Échec de connexion au service de paiement.");
+      console.error("Erreur:", error);
+      alert("Impossible de lancer le paiement.");
     }
   };
+  
 
   // Redirection automatique à l’ouverture du modal
   useEffect(() => {
