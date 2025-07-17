@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 
 // Définir cette route comme dynamique
-// export const dynamic = 'force-dynamic';
+export const dynamic = 'force-dynamic';
 
 /**
  * API Waitlist - Compatibilité avec ancien code
